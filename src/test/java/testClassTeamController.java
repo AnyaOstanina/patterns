@@ -79,6 +79,13 @@ public class testClassTeamController {
     }
 
     @Test
+    public void testDoPostCallSetAttrTeam() throws Exception {
+        when(request.getParameter("action")).thenReturn("addTeam");
+        spyTeamController.doPost(request, response);
+        verify(request, times(1)).setAttribute(eq("teams"), anyList());
+    }
+
+    @Test
     public void testDoGet() throws Exception {
         when(spyTeamService.getAllTeams()).thenReturn(teamList);
         spyTeamController.setTeamService(spyTeamService);

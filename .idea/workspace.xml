@@ -58,23 +58,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.testClassTeamController.testDoGet">
-    <configuration name="testAddEventAction.testAddEventActionCallSetDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Customer Application" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gameControllerTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="gameControllerTest" />
-      <option name="MAIN_CLASS_NAME" value="gameControllerTest.testAddEventAction" />
-      <option name="METHOD_NAME" value="testAddEventActionCallSetDate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.testClassTeamController.testDoPostCallSetAttrTeam">
     <configuration name="testClassProtocolController.testDoPostCheckParams" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Customer Application" />
       <option name="PACKAGE_NAME" value="" />
@@ -110,6 +94,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="testClassTeamController" />
       <option name="METHOD_NAME" value="testDoPostCallGetAllTeams" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testClassTeamController.testDoPostCallSetAttrTeam" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Customer Application" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="testClassTeamController" />
+      <option name="METHOD_NAME" value="testDoPostCallSetAttrTeam" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -195,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.testClassTeamController.testDoPostCallSetAttrTeam" />
         <item itemvalue="JUnit.testClassTeamController.testDoGet" />
         <item itemvalue="JUnit.testClassProtocolController.testDoPostCheckParams" />
         <item itemvalue="JUnit.testClassTeamController.testDoPostCallAddTeam" />
         <item itemvalue="JUnit.testClassTeamController.testDoPostCallGetAllTeams" />
-        <item itemvalue="JUnit.testAddEventAction.testAddEventActionCallSetDate" />
       </list>
     </recent_temporary>
   </component>
@@ -218,7 +212,7 @@
       <workItem from="1572875242398" duration="16666000" />
       <workItem from="1577110371650" duration="5722000" />
       <workItem from="1577197105244" duration="3168000" />
-      <workItem from="1577367100292" duration="64651000" />
+      <workItem from="1577367100292" duration="66503000" />
     </task>
     <servers />
   </component>
