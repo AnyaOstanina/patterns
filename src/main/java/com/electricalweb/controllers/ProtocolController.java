@@ -54,7 +54,7 @@ public class ProtocolController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
+        long idProtocol = Integer.parseInt(req.getParameter("idProtocol"));
         Protocol protocol= null;
         try {
             protocol = protoService.getProtocol(idProtocol);

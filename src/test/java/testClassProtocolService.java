@@ -141,11 +141,10 @@ public class testClassProtocolService {
 
     @Test
     public void testGetProtocolThrowException() throws Exception {
-        // create and start a ListAppender
         ProtocolService protoService = new ProtocolService();
         ProtocolService spyProtoService = Mockito.spy(protoService);
         expectedException.expect(Exception.class);
-        expectedException.expectMessage("The Game id 0 not found");
-        given(spyProtoService.getProtocol(0)).willThrow(new Exception("The Game id 0 not found"));
+        expectedException.expectMessage("The Protocol id 0 not found");
+        given(spyProtoService.getProtocol(0)).willThrow(new Exception("The Protocol id 0 not found"));
     }
 }

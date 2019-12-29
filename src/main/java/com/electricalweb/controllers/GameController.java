@@ -109,7 +109,7 @@ public class GameController extends HttpServlet {
         String[] players = req.getParameterValues("players[]");
         List<Player> playersList = new ArrayList<Player>();
         for(int i=0; i < players.length; i++) {
-            long playerId =  Integer.valueOf(players[i]);
+            long playerId =  Long.valueOf(players[i]);
             playersList.add(gameService.getPlayer(playerId));
         }
         Event event = new Event(name, time, playersList);

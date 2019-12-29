@@ -36,6 +36,11 @@ public class testClassProtocolController {
     @Captor
     ArgumentCaptor<String> stringCaptor;
 
+    private ProtocolController protocolController;
+    private ProtocolController spyProtocolController;
+    private ProtocolService protocolService;
+    private ProtocolService spyProtocolService;
+
     private Protocol proto;
     private List<Protocol> protoList;
     private Map<Player, Integer> play;
@@ -49,15 +54,19 @@ public class testClassProtocolController {
         protoList.add(proto);
         play = new HashMap<Player, Integer>();
         play.put(new Player("Ivan", "One"), 0);
+        initSpy();
     }
 
-    //завистливая функция getProtocol в классе ProtocolService
+    public void initSpy() {
+        protocolController = new ProtocolController();
+        spyProtocolController =  Mockito.spy(protocolController);
+        protocolService = new ProtocolService();
+        spyProtocolService = Mockito.spy(protocolService);
+    }
+
+    //завистливая функция getProtocol в классе ProtocolService путем тестирования метода doPost
     @Test
-    public void testFeatureEnvyGetProtocol() throws Exception {
-        ProtocolController protocolController = new ProtocolController();
-        ProtocolController spyProtocolController =  Mockito.spy(protocolController);
-        ProtocolService protocolService = new ProtocolService();
-        ProtocolService spyProtocolService = Mockito.spy(protocolService);
+    public void testDoPostCheckParams() throws Exception {
         spyProtocolService.setProtoList(protoList);
         when(spyProtocolService.getStatisticGol(proto)).thenReturn(0);
         when(spyProtocolService.getStatisticGolPlayer(proto)).thenReturn(play);
@@ -66,5 +75,27 @@ public class testClassProtocolController {
         spyProtocolController.doPost(request, response);
         verify(spyProtocolController).forwardResponse(stringCaptor.capture(),requestCaptor.capture(),responseCaptor.capture());
         assertEquals(request, requestCaptor.getValue());
+    }
+
+    @Test
+    public void testDoPostCheckSetAttrProtocol() throws Exception {
+        spyProtocolService.setProtoList(protoList);
+        when(spyProtocolService.getStatisticGol(proto)).thenReturn(0);
+        when(spyProtocolService.getStatisticGolPlayer(proto)).thenReturn(play);
+        spyProtocolController.setProtoService(spyProtocolService);
+        doNothing().when(spyProtocolController).forwardResponse("/WEB-INF/views/protocol.jsp", request, response);
+        spyProtocolController.doPost(request, response);
+        verify(request, times(1)).setAttribute(eq("protocol"), any(Protocol.class));
+    }
+
+    @Test
+    public void testDoPostCheckForwardResponseCalled() throws Exception {
+        spyProtocolService.setProtoList(protoList);
+        when(spyProtocolService.getStatisticGol(proto)).thenReturn(0);
+        when(spyProtocolService.getStatisticGolPlayer(proto)).thenReturn(play);
+        spyProtocolController.setProtoService(spyProtocolService);
+        doNothing().when(spyProtocolController).forwardResponse("/WEB-INF/views/protocol.jsp", request, response);
+        spyProtocolController.doPost(request, response);
+        verify(spyProtocolController, times(1)).forwardResponse("/WEB-INF/views/protocol.jsp", request, response);
     }
 }

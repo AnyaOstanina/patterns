@@ -19,7 +19,7 @@ public class ProtocolService {
         if (match.isPresent()) {
             return match.get();
         } else {
-            throw new Exception("The Game id " + id + " not found");
+            throw new Exception("The Protocol id " + id + " not found");
         }
     }
 
