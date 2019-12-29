@@ -15,7 +15,7 @@ import java.util.Map;
 public class ProtocolController extends HttpServlet {
     ProtocolService protoService = new ProtocolService();
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
             long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
         Protocol protocol= null;
@@ -34,12 +34,15 @@ public class ProtocolController extends HttpServlet {
             forwardResponse(url, req, resp);
     }
 
+    public void setProtoService(ProtocolService protoService) {
+        this.protoService = protoService;
+    }
 
     private String determineUrl() {
         return "/WEB-INF/views/protocol.jsp";
     }
 
-    private void forwardResponse(String url, HttpServletRequest request, HttpServletResponse response) {
+    public void forwardResponse(String url, HttpServletRequest request, HttpServletResponse response) {
         try {
             request.getRequestDispatcher(url).forward(request, response);
         } catch (ServletException e) {

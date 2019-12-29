@@ -22,7 +22,7 @@ public class CustomerController extends HttpServlet {
     GameService gameService = new GameService();
     CustomerService customerService = new CustomerService();
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Customer customer = null;
         try {
             customer = customerService.findCustomer(request.getParameter("login"), request.getParameter("password"));

@@ -1,5 +1,4 @@
 package com.electricalweb.controllers;
-
 import com.electricalweb.entities.Event;
 import com.electricalweb.entities.Player;
 import com.electricalweb.entities.Protocol;
@@ -24,6 +23,10 @@ public class ProtocolService {
         }
     }
 
+    public void setProtoList(List<Protocol> protoList) {
+        this.protoList = protoList;
+    }
+
     public int getStatisticGol(Protocol protocol) {
         List<Event> events =  protocol.getEvents();
         int gol = 0;
@@ -37,6 +40,13 @@ public class ProtocolService {
 
     public Map<Player, Integer> getStatisticGolPlayer(Protocol protocol) {
         List<Event> events =  protocol.getEvents();
+        if (events.size() <= 0) {
+            Player MockPlayer = new Player("Not", "Found");
+            Map<Player, Integer> pair = new HashMap<Player, Integer>();
+            pair.put(MockPlayer, 0);
+            return pair;
+        }
+
         int gol = 0;
         Map<Player, Integer> map = new HashMap<Player, Integer>();
         for(int i=0; i< events.size(); i++) {
@@ -46,6 +56,7 @@ public class ProtocolService {
                 map.put(events.get(i).getPlayers().get(0), count + 1);
             }
         }
+
         Player play = map.entrySet().stream().max((entry1, entry2) -> entry1.getValue() > entry2.getValue() ? 1 : -1).get().getKey();
         int val = map.entrySet().stream().max((entry1, entry2) -> entry1.getValue() > entry2.getValue() ? 1 : -1).get().getValue();
         Map<Player, Integer> pair = new HashMap<Player, Integer>();

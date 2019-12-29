@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 public class GameController extends HttpServlet {
     GameService gameService = new GameService();
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String action = req.getParameter("action");
         if (action != null) {
@@ -56,7 +56,11 @@ public class GameController extends HttpServlet {
         forwardResponse(url, req, resp);
     }
 
-    private void addProtocol(HttpServletRequest req, HttpServletResponse resp)
+    public void setGameService(GameService gameService) {
+        this.gameService = gameService;
+    }
+
+    public void addProtocol(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String name = req.getParameter("gameName");
         String date = req.getParameter("date");
@@ -73,11 +77,11 @@ public class GameController extends HttpServlet {
     }
 
 
-    private String determineUrl() {
+    public String determineUrl() {
         return "/WEB-INF/views/game.jsp";
     }
 
-    private void forwardResponse(String url, HttpServletRequest request, HttpServletResponse response) {
+    public void forwardResponse(String url, HttpServletRequest request, HttpServletResponse response) {
         try {
             request.getRequestDispatcher(url).forward(request, response);
         } catch (ServletException e) {
@@ -87,10 +91,9 @@ public class GameController extends HttpServlet {
         }
     }
 
-    private void forwardListEvents(HttpServletRequest req, HttpServletResponse resp, Protocol protocol)
+    public void forwardListEvents(HttpServletRequest req, HttpServletResponse resp, Protocol protocol)
             throws ServletException, IOException {
         String url = determineUrl();
-        Protocol proto = searchProtocolById(req, resp);
         String idCustomer = req.getParameter("idCustomer");
         req.setAttribute("protocol", protocol);
         req.setAttribute("players", gameService.getAllPlayers());
@@ -98,7 +101,7 @@ public class GameController extends HttpServlet {
         forwardResponse(url, req, resp);
     }
 
-    private void addEventAction(HttpServletRequest req, HttpServletResponse resp)
+    public void addEventAction(HttpServletRequest req, HttpServletResponse resp)
             throws Exception {
         String name = req.getParameter("name");
         String time = req.getParameter("time");
@@ -116,9 +119,7 @@ public class GameController extends HttpServlet {
         forwardListEvents(req, resp, proto);
     }
 
-
-
-    private Protocol searchProtocolById(HttpServletRequest req, HttpServletResponse resp)
+    public Protocol searchProtocolById(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
         Protocol protocol = null;
