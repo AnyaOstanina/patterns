@@ -17,7 +17,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.*;
 
-public class testClassGameControllerAddEventAction {
+public class testAddEventAction {
     @Mock
     HttpServletRequest request;
 
@@ -51,7 +51,7 @@ public class testClassGameControllerAddEventAction {
         when(request.getParameter("gameName")).thenReturn("Football");
         when(request.getParameter("date")).thenReturn("11.11.11");
         when(request.getParameter("idCustomer")).thenReturn(String.valueOf(1111));
-        when(request.getParameter("name")).thenReturn("Football");
+        when(request.getParameter("name")).thenReturn("gol");
         when(request.getParameter("time")).thenReturn("11:20");
         when(request.getParameter("idProtocol")).thenReturn("111");
         setPlayersIdArray(1);
@@ -87,6 +87,7 @@ public class testClassGameControllerAddEventAction {
         spyGameController.addEventAction(request, response);
         verify(spyGameController).forwardListEvents(requestCaptor.capture(),responseCaptor.capture(),protocolCaptor.capture());
         assertEquals(111, protocolCaptor.getValue().getCreatorId());
+        assertEquals(1, protocolCaptor.getValue().getEvents().size());
     }
 
     @Test

@@ -74,7 +74,7 @@ public class testClassProtocolController {
         doNothing().when(spyProtocolController).forwardResponse("/WEB-INF/views/protocol.jsp", request, response);
         spyProtocolController.doPost(request, response);
         verify(spyProtocolController).forwardResponse(stringCaptor.capture(),requestCaptor.capture(),responseCaptor.capture());
-        assertEquals(request, requestCaptor.getValue());
+        assertEquals(request, requestCaptor.getValue().getAttributeNames());
     }
 
     @Test

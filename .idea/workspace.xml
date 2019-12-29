@@ -8,22 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ffd8f2d-6caa-4ced-8c90-5b54d18ffce4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/gameControllerTest/testAddProtocolMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gameControllerTest/testClassGameControllerAddEventAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/gameControllerTest/testMethodDependsAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testClassTeamController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testClassGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gameControllerTest/testDoPost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/TeamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gameControllerTest/testClassGameControllerAddEventAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gameControllerTest/testAddEventAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testClassProtocolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClassProtocolController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testClassProtocolService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClassProtocolService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/ProtocolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/ProtocolController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/ProtocolService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/ProtocolService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testClassGameController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/TeamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/TeamController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/gameControllerTest/testClassGameControllerAddEventAction.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/testClassProtocolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testClassProtocolController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testClassProtocolService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testClassProtocolService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,8 +64,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.testClassGameControllerAddEventAction.testAddEventActionCallSetDate">
-    <configuration name="testClassGameControllerAddEventAction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.testClassTeamController.testDoGet">
+    <configuration name="testAddEventAction.testAddEventActionCallSetDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Customer Application" />
       <extension name="coverage">
         <pattern>
@@ -82,65 +74,48 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="gameControllerTest" />
-      <option name="MAIN_CLASS_NAME" value="gameControllerTest.testClassGameControllerAddEventAction" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testClassGameControllerAddEventAction.testAddEventActionCallSearchProtocolById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Customer Application" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gameControllerTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="gameControllerTest" />
-      <option name="MAIN_CLASS_NAME" value="gameControllerTest.testClassGameControllerAddEventAction" />
-      <option name="METHOD_NAME" value="testAddEventActionCallSearchProtocolById" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testClassGameControllerAddEventAction.testAddEventActionCallSetDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Customer Application" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gameControllerTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="gameControllerTest" />
-      <option name="MAIN_CLASS_NAME" value="gameControllerTest.testClassGameControllerAddEventAction" />
+      <option name="MAIN_CLASS_NAME" value="gameControllerTest.testAddEventAction" />
       <option name="METHOD_NAME" value="testAddEventActionCallSetDate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testClassGameControllerAddEventAction.testAddEventActionNotCallSetDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testClassProtocolController.testDoPostCheckParams" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Customer Application" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gameControllerTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="gameControllerTest" />
-      <option name="MAIN_CLASS_NAME" value="gameControllerTest.testClassGameControllerAddEventAction" />
-      <option name="METHOD_NAME" value="testAddEventActionNotCallSetDate" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="testClassProtocolController" />
+      <option name="METHOD_NAME" value="testDoPostCheckParams" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testClassProtocolController.testDoPostCheckForwardResponseCalled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testClassTeamController.testDoGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Customer Application" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="testClassProtocolController" />
-      <option name="METHOD_NAME" value="testDoPostCheckForwardResponseCalled" />
+      <option name="MAIN_CLASS_NAME" value="testClassTeamController" />
+      <option name="METHOD_NAME" value="testDoGet" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testClassTeamController.testDoPostCallAddTeam" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Customer Application" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="testClassTeamController" />
+      <option name="METHOD_NAME" value="testDoPostCallAddTeam" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testClassTeamController.testDoPostCallGetAllTeams" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Customer Application" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="testClassTeamController" />
+      <option name="METHOD_NAME" value="testDoPostCallGetAllTeams" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -226,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.testClassGameControllerAddEventAction.testAddEventActionCallSetDate" />
-        <item itemvalue="JUnit.testClassGameControllerAddEventAction.testAddEventActionNotCallSetDate" />
-        <item itemvalue="JUnit.testClassGameControllerAddEventAction" />
-        <item itemvalue="JUnit.testClassGameControllerAddEventAction.testAddEventActionCallSearchProtocolById" />
-        <item itemvalue="JUnit.testClassProtocolController.testDoPostCheckForwardResponseCalled" />
+        <item itemvalue="JUnit.testClassTeamController.testDoGet" />
+        <item itemvalue="JUnit.testClassProtocolController.testDoPostCheckParams" />
+        <item itemvalue="JUnit.testClassTeamController.testDoPostCallAddTeam" />
+        <item itemvalue="JUnit.testClassTeamController.testDoPostCallGetAllTeams" />
+        <item itemvalue="JUnit.testAddEventAction.testAddEventActionCallSetDate" />
       </list>
     </recent_temporary>
   </component>
@@ -249,7 +224,7 @@
       <workItem from="1572875242398" duration="16666000" />
       <workItem from="1577110371650" duration="5722000" />
       <workItem from="1577197105244" duration="3168000" />
-      <workItem from="1577367100292" duration="56303000" />
+      <workItem from="1577367100292" duration="62328000" />
     </task>
     <servers />
   </component>

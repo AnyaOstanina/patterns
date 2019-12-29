@@ -17,7 +17,7 @@ import java.util.List;
 public class TeamController extends HttpServlet {
     TeamService teamService = new TeamService();
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String action = req.getParameter("action");
         if (action != null) {
@@ -35,8 +35,12 @@ public class TeamController extends HttpServlet {
         }
     }
 
+    public void setTeamService(TeamService teamService) {
+        this.teamService = teamService;
+    }
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String url = determineUrl();
         List<Team> teams = new ArrayList<Team>();
         teams=teamService.getAllTeams();
@@ -44,7 +48,7 @@ public class TeamController extends HttpServlet {
         forwardResponse(url, req, resp);
     }
 
-    private void addTeam(HttpServletRequest req, HttpServletResponse resp)
+    public void addTeam(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String name = req.getParameter("teamName");
         String date = req.getParameter("date");
@@ -61,7 +65,7 @@ public class TeamController extends HttpServlet {
         return "/WEB-INF/views/team.jsp";
     }
 
-    private void forwardResponse(String url, HttpServletRequest request, HttpServletResponse response) {
+    public void forwardResponse(String url, HttpServletRequest request, HttpServletResponse response) {
         try {
             request.getRequestDispatcher(url).forward(request, response);
         } catch (ServletException e) {
