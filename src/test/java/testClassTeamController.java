@@ -83,7 +83,6 @@ public class testClassTeamController {
         when(spyTeamService.getAllTeams()).thenReturn(teamList);
         spyTeamController.setTeamService(spyTeamService);
         spyTeamController.doGet(request, response);
-        verify(spyTeamController).forwardResponse(anyString(),requestCaptor.capture(),responseCaptor.capture());
         verify(spyTeamService, times(1)).getAllTeams();
     }
 }

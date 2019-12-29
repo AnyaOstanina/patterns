@@ -8,14 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ffd8f2d-6caa-4ced-8c90-5b54d18ffce4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/testClassTeamController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/TeamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gameControllerTest/testClassGameControllerAddEventAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gameControllerTest/testAddEventAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testClassProtocolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClassProtocolController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/TeamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/TeamController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/gameControllerTest/testClassGameControllerAddEventAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testClassProtocolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testClassProtocolController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testClassTeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClassTeamController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -224,7 +218,7 @@
       <workItem from="1572875242398" duration="16666000" />
       <workItem from="1577110371650" duration="5722000" />
       <workItem from="1577197105244" duration="3168000" />
-      <workItem from="1577367100292" duration="62328000" />
+      <workItem from="1577367100292" duration="64651000" />
     </task>
     <servers />
   </component>
