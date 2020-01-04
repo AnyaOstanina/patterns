@@ -29,7 +29,7 @@ public class testClassProtocolService {
     public void setUp() throws Exception {
         proto = new Protocol("11.11.11", "Football",1111);
         Player player = new Player("Ivan","Team 1");
-        List<Player> playersList = new ArrayList<Player>();
+        playersList = new ArrayList<Player>();
         playersList.add(player);
     }
     // tests for getStatisticGolPlayer()

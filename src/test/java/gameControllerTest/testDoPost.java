@@ -37,6 +37,8 @@ public class testDoPost {
     ArgumentCaptor<HttpServletResponse> responseCaptor;
     @Captor
     ArgumentCaptor<HttpServletRequest> requestCaptor;
+    @Captor
+    ArgumentCaptor<String> stringCaptor;
 
     private String[] playersIdArray;
     private GameController gameController;
@@ -107,12 +109,13 @@ public class testDoPost {
     }
 
     @Test
-    public void testForwardListEventsParams() throws ServletException, IOException {
-        Protocol protocol = new Protocol("11.11.11", "Football", 111);
+    public void testForwardResponseParams() throws ServletException, IOException {
         doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/game.jsp", request, response);
         spyGameController.doPost(request, response);
-        verify(spyGameController).forwardResponse(anyString(),requestCaptor.capture(),responseCaptor.capture());
-        assertEquals(111, protocolCaptor.getValue().getCreatorId());
+        verify(spyGameController).forwardResponse(stringCaptor.capture(),requestCaptor.capture(),responseCaptor.capture());
+        assertEquals(request, requestCaptor.getValue());
+        assertEquals(response, responseCaptor.getValue());
+        assertEquals("/WEB-INF/views/game.jsp", stringCaptor.getValue());
     }
     //end test method doPost
 }

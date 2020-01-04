@@ -30,7 +30,7 @@ public class testMethodDependsAction {
     public static String[] data() {
         String[] actionArray = new String[2];
         actionArray[0] = "addProtocol";
-        actionArray[1] = "addEventAction";
+        actionArray[1] = "addEvent";
         return actionArray;
     }
 
@@ -93,15 +93,26 @@ public class testMethodDependsAction {
     public void testAddEventActionCalledOnce() throws Exception {
         when(request.getParameter("action")).thenReturn(action);
         doNothing().when(spyGameController).addEventAction(request, response);
+        doNothing().when(spyGameController).addProtocol(request, response);
         spyGameController.doPost(request, response);
-        verify(spyGameController, times(1)).addEventAction(request, response);
+        if(action=="addEvent") {
+            verify(spyGameController, times(1)).addEventAction(request, response);
+        } else {
+            verify(spyGameController, times(0)).addEventAction(request, response);
+        }
+
     }
 
     @Test
-    public void testAddProtocolCalledOnce() throws ServletException, IOException {
+    public void testAddProtocolCalledOnce() throws Exception {
         when(request.getParameter("action")).thenReturn(action);
+        doNothing().when(spyGameController).addEventAction(request, response);
         doNothing().when(spyGameController).addProtocol(request, response);
         spyGameController.doPost(request, response);
-        verify(spyGameController, times(1)).addProtocol(request, response);
+        if(action=="addProtocol") {
+            verify(spyGameController, times(1)).addProtocol(request, response);
+        } else {
+            verify(spyGameController, times(0)).addProtocol(request, response);
+        }
     }
 }
