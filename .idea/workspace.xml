@@ -9,10 +9,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8ffd8f2d-6caa-4ced-8c90-5b54d18ffce4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gameControllerTest/testDoPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gameControllerTest/testDoPost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/gameControllerTest/testMethodDependsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gameControllerTest/testMethodDependsAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testClassProtocolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClassProtocolController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testClassProtocolService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClassProtocolService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Customer Application.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application.war" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +42,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="D:/Documents" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -61,7 +60,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.testClassProtocolService.checkPlayerName">
+  <component name="RunManager" selected="JUnit.testAddProtocolMethod">
     <configuration name="testAddEventAction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Customer Application" />
       <extension name="coverage">
@@ -207,11 +206,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.testAddProtocolMethod" />
+        <item itemvalue="JUnit.testDoPost" />
         <item itemvalue="JUnit.testClassProtocolService.checkPlayerName" />
         <item itemvalue="JUnit.testClassProtocolController.testDoPostCheckSetAttrProtocol" />
         <item itemvalue="JUnit.testAddEventAction" />
-        <item itemvalue="JUnit.testAddProtocolMethod" />
-        <item itemvalue="JUnit.testDoPost" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +230,8 @@
       <workItem from="1577110371650" duration="5722000" />
       <workItem from="1577197105244" duration="3168000" />
       <workItem from="1577367100292" duration="69168000" />
-      <workItem from="1578146546372" duration="1191000" />
+      <workItem from="1578146546372" duration="1487000" />
+      <workItem from="1578287038662" duration="1337000" />
     </task>
     <servers />
   </component>

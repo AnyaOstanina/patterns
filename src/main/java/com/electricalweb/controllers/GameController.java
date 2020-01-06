@@ -36,18 +36,22 @@ public class GameController extends HttpServlet {
                     break;
             }
         } else {
-            String name = req.getParameter("gameName");
-            String date = req.getParameter("date");
-            String idCustomer = req.getParameter("idCustomer");
-            Protocol protocol = new Protocol(date, name, Integer.valueOf(idCustomer));
-            gameService.addProtocol(protocol);
-            req.setAttribute("protocols", gameService.getAllProtocols());
-            req.setAttribute("players", gameService.getAllPlayers());
-            req.setAttribute("idCustomer", idCustomer);
-            req.setAttribute("protocol", protocol);
+            setAttributes(req);
             String url = "/WEB-INF/views/game.jsp";
             forwardResponse(url, req, resp);
         }
+    }
+
+    private void setAttributes(HttpServletRequest req) {
+        String name = req.getParameter("gameName");
+        String date = req.getParameter("date");
+        String idCustomer = req.getParameter("idCustomer");
+        Protocol protocol = new Protocol(date, name, Integer.valueOf(idCustomer));
+        gameService.addProtocol(protocol);
+        req.setAttribute("protocols", gameService.getAllProtocols());
+        req.setAttribute("players", gameService.getAllPlayers());
+        req.setAttribute("idCustomer", idCustomer);
+        req.setAttribute("protocol", protocol);
     }
 
     @Override
@@ -62,16 +66,8 @@ public class GameController extends HttpServlet {
 
     public void addProtocol(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String name = req.getParameter("gameName");
-        String date = req.getParameter("date");
-        String idCustomer = req.getParameter("idCustomer");
-        Protocol protocol = new Protocol(date, name, Integer.valueOf(idCustomer));
-        gameService.addProtocol(protocol);
-        req.setAttribute("protocols", gameService.getAllProtocols());
-        req.setAttribute("players", gameService.getAllPlayers());
+        setAttributes(req);
         req.setAttribute("gameList", gameService.getAllGames());
-        req.setAttribute("idCustomer", idCustomer);
-        req.setAttribute("protocol", protocol);
         String url = "/WEB-INF/views/customerinfo.jsp";
         forwardResponse(url, req, resp);
     }
