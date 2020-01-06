@@ -8,16 +8,12 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 
 import static org.junit.Assert.*;
 import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -145,6 +141,6 @@ public class testClassProtocolService {
         ProtocolService spyProtoService = Mockito.spy(protoService);
         expectedException.expect(Exception.class);
         expectedException.expectMessage("The Protocol id 0 not found");
-        given(spyProtoService.getProtocol(0)).willThrow(new Exception("The Protocol id 0 not found"));
+        given(ProtocolList.getProtocol( 0)).willThrow(new Exception("The Protocol id 0 not found"));
     }
 }

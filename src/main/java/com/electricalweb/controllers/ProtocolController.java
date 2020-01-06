@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import com.electricalweb.entities.ProtocolList;
 import java.util.Map;
 
 @WebServlet(name = "ProtocolController", urlPatterns = "/protocol")
@@ -20,7 +21,7 @@ public class ProtocolController extends HttpServlet {
             long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
         Protocol protocol= null;
         try {
-            protocol = protoService.getProtocol(idProtocol);
+            protocol = ProtocolList.getProtocol(idProtocol);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -57,7 +58,7 @@ public class ProtocolController extends HttpServlet {
         long idProtocol = Integer.parseInt(req.getParameter("idProtocol"));
         Protocol protocol= null;
         try {
-            protocol = protoService.getProtocol(idProtocol);
+            protocol = ProtocolList.getProtocol(idProtocol);
         } catch (Exception e) {
             e.printStackTrace();
         }

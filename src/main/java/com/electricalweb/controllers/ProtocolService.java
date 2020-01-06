@@ -11,18 +11,6 @@ import java.util.Optional;
 public class ProtocolService {
     List<Protocol> protoList = ProtocolList.getInstance();
 
-    public Protocol getProtocol(long id) throws Exception {
-        Optional<Protocol> match
-                = protoList.stream()
-                .filter(e -> e.getId() == id)
-                .findFirst();
-        if (match.isPresent()) {
-            return match.get();
-        } else {
-            throw new Exception("The Protocol id " + id + " not found");
-        }
-    }
-
     public void setProtoList(List<Protocol> protoList) {
         this.protoList = protoList;
     }
