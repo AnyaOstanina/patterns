@@ -9,8 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8ffd8f2d-6caa-4ced-8c90-5b54d18ffce4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testClassProtocolService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClassProtocolService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/GameController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +59,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.testClassProtocolService">
+  <component name="RunManager" selected="JUnit.testAddEventAction">
+    <configuration name="testAddEventAction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Customer Application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gameControllerTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="gameControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="gameControllerTest.testAddEventAction" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="testAddProtocolMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Customer Application" />
       <extension name="coverage">
@@ -91,21 +105,6 @@
       <option name="MAIN_CLASS_NAME" value="testClassProtocolService" />
       <option name="METHOD_NAME" value="checkGolEventMixedSpelling" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testDoPost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Customer Application" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gameControllerTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="gameControllerTest" />
-      <option name="MAIN_CLASS_NAME" value="gameControllerTest.testDoPost" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -205,11 +204,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.testAddEventAction" />
         <item itemvalue="JUnit.testClassProtocolService" />
         <item itemvalue="JUnit.testClassProtocolService.checkGolEventMixedSpelling" />
         <item itemvalue="JUnit.testMethodDependsAction" />
         <item itemvalue="JUnit.testAddProtocolMethod" />
-        <item itemvalue="JUnit.testDoPost" />
       </list>
     </recent_temporary>
   </component>
@@ -230,7 +229,7 @@
       <workItem from="1577197105244" duration="3168000" />
       <workItem from="1577367100292" duration="69168000" />
       <workItem from="1578146546372" duration="1487000" />
-      <workItem from="1578287038662" duration="3604000" />
+      <workItem from="1578287038662" duration="5322000" />
     </task>
     <servers />
   </component>

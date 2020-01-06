@@ -99,20 +99,27 @@ public class GameController extends HttpServlet {
 
     public void addEventAction(HttpServletRequest req, HttpServletResponse resp)
             throws Exception {
+        String date = req.getParameter("date");
+        Protocol proto = searchProtocolById(req, resp);
+        if(date!=null) { proto.setDate(date);}
+        proto.setEvents(сreateEventObject(req));
+        forwardListEvents(req, resp, proto);
+    }
+
+    private Event сreateEventObject(HttpServletRequest req) throws Exception {
         String name = req.getParameter("name");
         String time = req.getParameter("time");
-        String date = req.getParameter("date");
         String[] players = req.getParameterValues("players[]");
+        return new Event(name, time, createPlayersList(players));
+    }
+
+    private List<Player> createPlayersList(String[] players) throws Exception {
         List<Player> playersList = new ArrayList<Player>();
         for(int i=0; i < players.length; i++) {
             long playerId =  Long.valueOf(players[i]);
             playersList.add(gameService.getPlayer(playerId));
         }
-        Event event = new Event(name, time, playersList);
-        Protocol proto = searchProtocolById(req, resp);
-        if(date!=null) { proto.setDate(date);}
-        proto.setEvents(event);
-        forwardListEvents(req, resp, proto);
+        return playersList;
     }
 
     public Protocol searchProtocolById(HttpServletRequest req, HttpServletResponse resp)
