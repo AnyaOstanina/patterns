@@ -5,7 +5,7 @@ import com.electricalweb.entities.*;
 import java.util.List;
 
 public class TeamService {
-    List<Team> teamList = TeamList.getInstance();
+    List<Entity> teamList = TeamList.getInstance();
 
     public List getAllTeams() {
         return  teamList;

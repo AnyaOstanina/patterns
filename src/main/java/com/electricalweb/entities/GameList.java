@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameList extends EntityList{
-        private static final List<Game> gameList = new ArrayList();
+        private static final List<Entity> gameList = new ArrayList();
 
         public GameList(){
             super(gameList);
@@ -15,7 +15,7 @@ public class GameList extends EntityList{
             gameList.add(new Game("Football"));
         }
 
-        public static List <Game> getInstance(){
+        public static List <Entity> getInstance(){
             return gameList;
         }
 }

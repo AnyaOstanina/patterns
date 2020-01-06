@@ -11,13 +11,14 @@ public class EntityList {
         this.entityList=entityList;
     }
 
-    public Entity searchEntityById(long id) throws Exception {
+    public static Entity searchEntityById(long id) throws Exception {
         Optional<Entity> match
                 = entityList.stream()
                 .filter(e  -> e.getId() == id)
                 .findFirst();
+        Entity result = match.get();
         if (match.isPresent()) {
-            return match.get();
+            return result;
         } else {
             throw new Exception("The Game id " + id + " not found");
         }

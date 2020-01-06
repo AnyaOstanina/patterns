@@ -2,6 +2,7 @@ import com.electricalweb.controllers.GameController;
 import com.electricalweb.controllers.GameService;
 import com.electricalweb.controllers.ProtocolController;
 import com.electricalweb.controllers.ProtocolService;
+import com.electricalweb.entities.Entity;
 import com.electricalweb.entities.Player;
 import com.electricalweb.entities.Protocol;
 import com.electricalweb.entities.ProtocolList;
@@ -42,7 +43,7 @@ public class testClassProtocolController {
     private ProtocolService spyProtocolService;
 
     private Protocol proto;
-    private List<Protocol> protoList;
+    private List<Entity> protoList;
     private Map<Player, Integer> play;
 
     @Before

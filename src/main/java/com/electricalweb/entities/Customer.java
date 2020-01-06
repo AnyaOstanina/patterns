@@ -2,7 +2,7 @@ package com.electricalweb.entities;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Customer implements Entity {
+public class Customer {
     private long id;
     private String login;
     private String password;

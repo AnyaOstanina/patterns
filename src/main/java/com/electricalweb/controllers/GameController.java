@@ -100,7 +100,7 @@ public class GameController extends HttpServlet {
     public void addEventAction(HttpServletRequest req, HttpServletResponse resp)
             throws Exception {
         String date = req.getParameter("date");
-        Protocol proto = searchProtocolById(req, resp);
+        Protocol proto = (Protocol) searchProtocolById(req, resp);
         if(date!=null) { proto.setDate(date);}
         proto.setEvents(сreateEventObject(req));
         forwardListEvents(req, resp, proto);
@@ -113,8 +113,8 @@ public class GameController extends HttpServlet {
         return new Event(name, time, createPlayersList(players));
     }
 
-    private List<Player> createPlayersList(String[] players) throws Exception {
-        List<Player> playersList = new ArrayList<Player>();
+    private List<Entity> createPlayersList(String[] players) throws Exception {
+        List<Entity> playersList = new ArrayList<Entity>();
         for(int i=0; i < players.length; i++) {
             long playerId =  Long.valueOf(players[i]);
             playersList.add(gameService.getPlayer(playerId));
@@ -122,30 +122,16 @@ public class GameController extends HttpServlet {
         return playersList;
     }
 
-    public Protocol searchProtocolById(HttpServletRequest req, HttpServletResponse resp)
+    public Entity searchProtocolById(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
-        Protocol protocol = null;
+        Entity protocol = null;
         try {
             protocol = ProtocolList.getProtocol(idProtocol);
         } catch (Exception ex) {
             Logger.getLogger(GameController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return protocol;
-//        req.setAttribute("protocol", protocol);
-//        req.setAttribute("action", "edit");
-//        forwardListEvents(req, resp, protocol.getEvents());
-    }
-
-    private Player searchPlayerById(HttpServletRequest req, HttpServletResponse resp, long idPlayer)
-            throws ServletException, IOException {
-        Player player = null;
-        try {
-            player = gameService.getPlayer(idPlayer);
-        } catch (Exception ex) {
-            Logger.getLogger(GameController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return player;
 //        req.setAttribute("protocol", protocol);
 //        req.setAttribute("action", "edit");
 //        forwardListEvents(req, resp, protocol.getEvents());

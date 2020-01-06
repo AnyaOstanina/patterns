@@ -1,6 +1,7 @@
 package com.electricalweb.controllers;
 
 import com.electricalweb.entities.Player;
+import com.electricalweb.entities.PlayerList;
 import com.electricalweb.entities.Protocol;
 import com.electricalweb.entities.Team;
 
@@ -63,7 +64,7 @@ public class PlayerController extends HttpServlet {
             throws ServletException, IOException {
         Team team = null;
         try {
-            team = playerService.getTeam(id);
+            team = (Team) PlayerList.searchEntityById(id);
         } catch (Exception ex) {
             Logger.getLogger(GameController.class.getName()).log(Level.SEVERE, null, ex);
         }

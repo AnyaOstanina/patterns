@@ -5,18 +5,18 @@ import java.util.List;
 import java.util.Optional;
 
 public class GameService {
-    List<Event> eventList = EventList.getInstance();
-    List<Protocol> protocolList = ProtocolList.getInstance();
-    List<Player> playerList = PlayerList.getInstance();
-    List<Game> gameList = GameList.getInstance();
-    public List<Event> getAllEvents() {
+    List<Entity> eventList = EventList.getInstance();
+    List<Entity> protocolList = ProtocolList.getInstance();
+    List<Entity> playerList = PlayerList.getInstance();
+    List<Entity> gameList = GameList.getInstance();
+    public List<Entity> getAllEvents() {
         return eventList;
     }
-    public List<Game> getAllGames() {
+    public List<Entity> getAllGames() {
         return gameList;
     }
 
-    public List<Player> getAllPlayers() {
+    public List<Entity> getAllPlayers() {
         return playerList;
     }
 
@@ -30,8 +30,8 @@ public class GameService {
         protocolList.add(proto);
     }
 
-    public Player getPlayer(long id) throws Exception {
-        Optional<Player> match
+    public Entity getPlayer(long id) throws Exception {
+        Optional<Entity> match
                 = playerList.stream()
                 .filter(e -> e.getId() == id)
                 .findFirst();
@@ -42,7 +42,7 @@ public class GameService {
         }
     }
 
-    public List<Protocol> getAllProtocols() {
+    public List<Entity> getAllProtocols() {
         return protocolList;
     }
 }

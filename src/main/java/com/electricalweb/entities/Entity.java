@@ -1,5 +1,5 @@
 package com.electricalweb.entities;
 
-interface Entity {
+public interface Entity {
     long getId();
 }

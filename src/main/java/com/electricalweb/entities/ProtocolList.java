@@ -6,14 +6,14 @@ import java.util.Optional;
 
 public class ProtocolList extends EntityList {
 
-    private static final List<Protocol> protocolList = new ArrayList();
+    private static final List<Entity> protocolList = new ArrayList();
 
     public ProtocolList() {
         super(protocolList);
     }
 
-    public static Protocol getProtocol(long id) throws Exception {
-        Optional<Protocol> match
+    public static Entity getProtocol(long id) throws Exception {
+        Optional<Entity> match
                 = getInstance().stream()
                 .filter(e -> e.getId() == id)
                 .findFirst();
@@ -24,7 +24,7 @@ public class ProtocolList extends EntityList {
         }
     }
 
-    public static List<Protocol> getInstance() {
+    public static List<Entity> getInstance() {
         return protocolList;
     }
 }

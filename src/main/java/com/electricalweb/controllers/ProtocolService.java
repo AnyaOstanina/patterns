@@ -1,17 +1,15 @@
 package com.electricalweb.controllers;
-import com.electricalweb.entities.Event;
-import com.electricalweb.entities.Player;
-import com.electricalweb.entities.Protocol;
-import com.electricalweb.entities.ProtocolList;
+import com.electricalweb.entities.*;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.Optional;
 
 public class ProtocolService {
-    List<Protocol> protoList = ProtocolList.getInstance();
+    List<Entity> protoList = ProtocolList.getInstance();
 
-    public void setProtoList(List<Protocol> protoList) {
+    public void setProtoList(List<Entity> protoList) {
         this.protoList = protoList;
     }
 

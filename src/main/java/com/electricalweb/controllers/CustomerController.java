@@ -1,9 +1,6 @@
 package com.electricalweb.controllers;
 
-import com.electricalweb.entities.Customer;
-import com.electricalweb.entities.Game;
-import com.electricalweb.entities.GameList;
-import com.electricalweb.entities.Protocol;
+import com.electricalweb.entities.*;
 import com.electricalweb.validators.EmailValidator;
 import com.electricalweb.validators.StringValidator;
 
@@ -41,8 +38,8 @@ public class CustomerController extends HttpServlet {
 
         if(customer != null) {
             String url = determineUrl();
-            List<Game> gameList = GameList.getInstance();
-            List<Protocol> protocols = gameService.getAllProtocols();
+            List<Entity> gameList = GameList.getInstance();
+            List<Entity> protocols = gameService.getAllProtocols();
             request.setAttribute("protocols", protocols);
             request.setAttribute("idCustomer", customer.getId());
             request.setAttribute("gameList", gameList);
@@ -55,7 +52,7 @@ public class CustomerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         String url = "/WEB-INF/views/customerinfo.jsp";
-        List<Protocol> protocols = gameService.getAllProtocols();
+        List<Entity> protocols = gameService.getAllProtocols();
         req.setAttribute("protocols", protocols);
         forwardResponse(url, req, resp);
     }
