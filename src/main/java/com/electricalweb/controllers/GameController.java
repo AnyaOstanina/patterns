@@ -127,7 +127,7 @@ public class GameController extends HttpServlet {
         long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
         Protocol protocol = null;
         try {
-            protocol = gameService.getProtocol(idProtocol);
+            protocol = ProtocolList.getProtocol(idProtocol);
         } catch (Exception ex) {
             Logger.getLogger(GameController.class.getName()).log(Level.SEVERE, null, ex);
         }

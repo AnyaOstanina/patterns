@@ -30,18 +30,6 @@ public class GameService {
         protocolList.add(proto);
     }
 
-    public Protocol getProtocol(long id) throws Exception {
-        Optional<Protocol> match
-                = protocolList.stream()
-                .filter(e -> e.getId() == id)
-                .findFirst();
-        if (match.isPresent()) {
-            return match.get();
-        } else {
-            throw new Exception("The Game id " + id + " not found");
-        }
-    }
-
     public Player getPlayer(long id) throws Exception {
         Optional<Player> match
                 = playerList.stream()
