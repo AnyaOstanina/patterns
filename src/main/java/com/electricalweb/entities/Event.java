@@ -2,7 +2,7 @@ package com.electricalweb.entities;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Event  {
+public class Event implements Entity {
     private long id;
     private String name;
     private String time;

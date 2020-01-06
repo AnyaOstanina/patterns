@@ -3,10 +3,11 @@ package com.electricalweb.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TeamList {
+public class TeamList extends EntityList {
     private static final List<Team> teamList = new ArrayList();
 
-    private TeamList(){
+    public TeamList() {
+        super(teamList);
     }
 
     static {

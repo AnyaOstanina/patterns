@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Team {
+public class Team implements Entity {
     private long id;
     private String name;
     private List<Player> players;
