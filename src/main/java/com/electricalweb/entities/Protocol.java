@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Protocol  {
+public class Protocol  implements Entity  {
     private long id;
     private String date;
     private String game;

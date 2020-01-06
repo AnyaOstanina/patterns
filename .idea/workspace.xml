@@ -8,14 +8,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ffd8f2d-6caa-4ced-8c90-5b54d18ffce4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/EntityList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/TeamService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/CustomerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/CustomerList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/EventList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/EventList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/GameList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/GameList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/TeamList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/TeamList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/PlayerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/PlayerList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Protocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Protocol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/ProtocolList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/ProtocolList.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +67,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.testClassTeamController">
+  <component name="RunManager" selected="JUnit.testClassProtocolController">
     <configuration name="testAddEventAction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Customer Application" />
       <extension name="coverage">
@@ -199,8 +200,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.testClassTeamController" />
         <item itemvalue="JUnit.testClassProtocolController" />
+        <item itemvalue="JUnit.testClassTeamController" />
         <item itemvalue="JUnit.testClassProtocolService" />
         <item itemvalue="JUnit.testAddEventAction" />
         <item itemvalue="JUnit.testClassProtocolService.checkGolEventMixedSpelling" />
@@ -224,7 +225,7 @@
       <workItem from="1577197105244" duration="3168000" />
       <workItem from="1577367100292" duration="69168000" />
       <workItem from="1578146546372" duration="1487000" />
-      <workItem from="1578287038662" duration="12445000" />
+      <workItem from="1578287038662" duration="12822000" />
     </task>
     <servers />
   </component>

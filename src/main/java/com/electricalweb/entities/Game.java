@@ -3,7 +3,7 @@ package com.electricalweb.entities;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Game  {
+public class Game implements Entity {
     private long id;
     private String name;
     private static final AtomicLong counter = new AtomicLong(100);

@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class ProtocolList {
+public class ProtocolList extends EntityList {
 
     private static final List<Protocol> protocolList = new ArrayList();
 
-    private ProtocolList() {
+    public ProtocolList() {
+        super(protocolList);
     }
 
     public static Protocol getProtocol(long id) throws Exception {

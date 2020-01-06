@@ -3,10 +3,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class CustomerList {
+public class CustomerList extends EntityList {
     private static final List<Customer> customerList = new ArrayList();
 
-    private CustomerList(){
+    public CustomerList(){
+        super(customerList);
     }
 
     static {
