@@ -1,4 +1,5 @@
 package com.electricalweb.entities;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -26,5 +27,12 @@ public class Event implements Entity {
     }
     public long getId() {
         return id;
+    }
+
+    public static Event createEventObject(HttpServletRequest req) throws Exception {
+        String name = req.getParameter("name");
+        String time = req.getParameter("time");
+        String[] players = req.getParameterValues("players[]");
+        return new Event(name, time, PlayerList.createPlayersList(players));
     }
 }

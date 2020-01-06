@@ -17,6 +17,14 @@ public class PlayerList extends EntityList {
         playerList.add(new Player("Danil", "Team 2"));
     }
 
+    public static List<Entity> createPlayersList(String[] players) throws Exception {
+        List<Entity> playersList = new ArrayList<Entity>();
+        for(int i=0; i < players.length; i++) {
+            long playerId =  Long.valueOf(players[i]);
+            playersList.add(PlayerList.searchEntityById(playerId));
+        }
+        return playersList;
+    }
 
     public static List <Entity> getInstance(){
         return playerList;

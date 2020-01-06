@@ -1,26 +1,17 @@
 package com.electricalweb.controllers;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.electricalweb.entities.*;
-
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 @WebServlet(name = "GameController", urlPatterns = "/game")
 public class GameController extends HttpServlet {
     GameService gameService = new GameService();
     @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) {
         String action = req.getParameter("action");
         if (action != null) {
             switch (action) {
@@ -64,14 +55,12 @@ public class GameController extends HttpServlet {
         this.gameService = gameService;
     }
 
-    public void addProtocol(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    public void addProtocol(HttpServletRequest req, HttpServletResponse resp) {
         setAttributes(req);
         req.setAttribute("gameList", gameService.getAllGames());
         String url = "/WEB-INF/views/customerinfo.jsp";
         forwardResponse(url, req, resp);
     }
-
 
     public String determineUrl() {
         return "/WEB-INF/views/game.jsp";
@@ -87,8 +76,7 @@ public class GameController extends HttpServlet {
         }
     }
 
-    public void forwardListEvents(HttpServletRequest req, HttpServletResponse resp, Protocol protocol)
-            throws ServletException, IOException {
+    public void forwardListEvents(HttpServletRequest req, HttpServletResponse resp, Protocol protocol) {
         String url = determineUrl();
         String idCustomer = req.getParameter("idCustomer");
         req.setAttribute("protocol", protocol);
@@ -100,40 +88,15 @@ public class GameController extends HttpServlet {
     public void addEventAction(HttpServletRequest req, HttpServletResponse resp)
             throws Exception {
         String date = req.getParameter("date");
-        Protocol proto = (Protocol) searchProtocolById(req, resp);
+        Protocol proto = (Protocol) searchProtocolById(req);
         if(date!=null) { proto.setDate(date);}
-        proto.setEvents(сreateEventObject(req));
+        proto.setEvents(Event.createEventObject(req));
         forwardListEvents(req, resp, proto);
     }
 
-    private Event сreateEventObject(HttpServletRequest req) throws Exception {
-        String name = req.getParameter("name");
-        String time = req.getParameter("time");
-        String[] players = req.getParameterValues("players[]");
-        return new Event(name, time, createPlayersList(players));
-    }
-
-    private List<Entity> createPlayersList(String[] players) throws Exception {
-        List<Entity> playersList = new ArrayList<Entity>();
-        for(int i=0; i < players.length; i++) {
-            long playerId =  Long.valueOf(players[i]);
-            playersList.add(gameService.getPlayer(playerId));
-        }
-        return playersList;
-    }
-
-    public Entity searchProtocolById(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    public Entity searchProtocolById(HttpServletRequest req) throws Exception {
         long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
-        Entity protocol = null;
-        try {
-            protocol = ProtocolList.getProtocol(idProtocol);
-        } catch (Exception ex) {
-            Logger.getLogger(GameController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return protocol;
-//        req.setAttribute("protocol", protocol);
-//        req.setAttribute("action", "edit");
-//        forwardListEvents(req, resp, protocol.getEvents());
+        EntityList.searchEntityById(idProtocol);
+        return EntityList.searchEntityById(idProtocol);
     }
 }
