@@ -36,7 +36,7 @@ public class testClassProtocolService {
     @Test
     public void countGolLargeNumber() throws Exception {
         for(int i=0;i < 1000; i++) {
-            Event event = new Event("gol", "11.11.11", playersList);
+            Event event = new Event("goal", "11.11.11", playersList);
             proto.setEvents(event);
         }
         ProtocolService protoService = new ProtocolService();
@@ -47,7 +47,7 @@ public class testClassProtocolService {
 
     @Test
     public void countGol() {
-        Event event = new Event("gol", "11.11.11", playersList);
+        Event event = new Event("goal", "11.11.11", playersList);
         proto.setEvents(event);
         ProtocolService protoService = new ProtocolService();
         Map<Player, Integer> play = protoService.getStatisticGolPlayer(proto);
@@ -57,7 +57,7 @@ public class testClassProtocolService {
 
     @Test
     public void checkPlayerName() {
-        Event event = new Event("gol", "11.11.11", playersList);
+        Event event = new Event("goal", "11.11.11", playersList);
         proto.setEvents(event);
         ProtocolService protoService = new ProtocolService();
         Map<Player, Integer> play = protoService.getStatisticGolPlayer(proto);
@@ -87,7 +87,7 @@ public class testClassProtocolService {
 
     @Test
     public void checkGolEventCount() {
-        Event event = new Event("gol", "11.11.11", null);
+        Event event = new Event("goal", "11.11.11", null);
         proto.setEvents(event);
         ProtocolService protoService = new ProtocolService();
         int res = protoService.getStatisticGol(proto);
@@ -97,7 +97,7 @@ public class testClassProtocolService {
     @Test
     public void checkGolEventCountLargeNumber() {
         for(int i=0;i < 1000; i++) {
-            Event event = new Event("gol", "11.11.11", null);
+            Event event = new Event("goal", "11.11.11", null);
             proto.setEvents(event);
         }
 
@@ -126,7 +126,7 @@ public class testClassProtocolService {
 
         for(int i=0;i < 10; i++) {
             Event eventRu = new Event("гол", "11.11.11", null);
-            Event eventEn = new Event("gol", "11.11.11", null);
+            Event eventEn = new Event("goal", "11.11.11", null);
             proto.setEvents(eventRu);
             proto.setEvents(eventEn);
         }

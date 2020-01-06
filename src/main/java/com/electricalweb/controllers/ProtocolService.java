@@ -31,7 +31,7 @@ public class ProtocolService {
         List<Event> events =  protocol.getEvents();
         int gol = 0;
         for(int i=0; i< events.size(); i++) {
-            if(events.get(i).getName().equalsIgnoreCase("gol") || events.get(i).getName().equalsIgnoreCase("гол")) {
+            if(isGoal(events, i)) {
                 gol++;
             }
         }
@@ -50,7 +50,7 @@ public class ProtocolService {
         int gol = 0;
         Map<Player, Integer> map = new HashMap<Player, Integer>();
         for(int i=0; i< events.size(); i++) {
-            if(events.get(i).getName().equalsIgnoreCase("gol") || events.get(i).getName().equalsIgnoreCase("гол")) {
+            if(isGoal(events, i)) {
                 gol++;
                 int count = map.containsKey(events.get(i).getPlayers().get(0)) ? map.get(events.get(i).getPlayers().get(0)) : 0;
                 map.put(events.get(i).getPlayers().get(0), count + 1);
@@ -62,5 +62,9 @@ public class ProtocolService {
         Map<Player, Integer> pair = new HashMap<Player, Integer>();
         pair.put(play, val);
         return pair;
+    }
+
+    private boolean isGoal(List<Event> events, int i) {
+        return events.get(i).getName().equalsIgnoreCase("goal") || events.get(i).getName().equalsIgnoreCase("гол");
     }
 }
