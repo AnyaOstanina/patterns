@@ -57,11 +57,15 @@ public class ProtocolService {
             }
         }
 
-        Player play = map.entrySet().stream().max((entry1, entry2) -> entry1.getValue() > entry2.getValue() ? 1 : -1).get().getKey();
-        int val = map.entrySet().stream().max((entry1, entry2) -> entry1.getValue() > entry2.getValue() ? 1 : -1).get().getValue();
+        Player play = getResultOfGoalStatistic(map).getKey();
+        int val = getResultOfGoalStatistic(map).getValue();
         Map<Player, Integer> pair = new HashMap<Player, Integer>();
         pair.put(play, val);
         return pair;
+    }
+
+    private Map.Entry<Player, Integer> getResultOfGoalStatistic(Map<Player, Integer> map) {
+        return map.entrySet().stream().max((entry1, entry2) -> entry1.getValue() > entry2.getValue() ? 1 : -1).get();
     }
 
     private boolean isGoal(List<Event> events, int i) {
