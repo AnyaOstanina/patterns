@@ -17,16 +17,16 @@ public class PlayerList extends EntityList {
         playerList.add(new Player("Danil", "Team 2"));
     }
 
-    public static List<Entity> createPlayersList(String[] players) throws Exception {
+    public static List<Entity> createPlayersList(String[] players, PlayerList playerList) throws Exception {
         List<Entity> playersList = new ArrayList<Entity>();
         for(int i=0; i < players.length; i++) {
             long playerId =  Long.valueOf(players[i]);
-            playersList.add(PlayerList.searchEntityById(playerId));
+            playersList.add(playerList.searchEntityById(playerId));
         }
         return playersList;
     }
 
-    public static List <Entity> getInstance(){
+    public static List <Entity> getInstance() {
         return playerList;
     }
 }

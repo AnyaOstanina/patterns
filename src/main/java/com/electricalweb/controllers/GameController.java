@@ -88,15 +88,9 @@ public class GameController extends HttpServlet {
     public void addEventAction(HttpServletRequest req, HttpServletResponse resp)
             throws Exception {
         String date = req.getParameter("date");
-        Protocol proto = (Protocol) searchProtocolById(req);
+        Protocol proto = (Protocol) gameService.searchProtocolById(req);
         if(date!=null) { proto.setDate(date);}
-        proto.setEvents(Event.createEventObject(req));
+        proto.setEvents(Event.createEventObject(req, gameService.playerList));
         forwardListEvents(req, resp, proto);
-    }
-
-    public Entity searchProtocolById(HttpServletRequest req) throws Exception {
-        long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
-        EntityList.searchEntityById(idProtocol);
-        return EntityList.searchEntityById(idProtocol);
     }
 }

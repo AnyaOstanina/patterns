@@ -2,15 +2,16 @@ package gameControllerTest;
 
 import com.electricalweb.controllers.GameController;
 import com.electricalweb.controllers.GameService;
-import com.electricalweb.entities.Event;
-import com.electricalweb.entities.Player;
-import com.electricalweb.entities.Protocol;
+import com.electricalweb.entities.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
@@ -38,6 +39,7 @@ public class testAddEventAction {
     private GameController spyGameController;
     private GameService gameService;
     private GameService spyGameService;
+    public  List<Entity> playerList = new PlayerList().getInstance();
 
     @Before
     public void setUp() throws Exception {
@@ -60,8 +62,8 @@ public class testAddEventAction {
 
     public void setReturningValues() throws Exception {
         doReturn(new Player("Ivan", "Team 1")).when(spyGameService).getPlayer(anyLong());
-        Protocol protocol = new Protocol("11.11.11", "Football", 111);
-        doReturn(protocol).when(spyGameController).searchProtocolById(request);
+        Entity protocol = new Protocol("11.11.11", "Football", 111);
+        doReturn(protocol).when(spyGameService).searchProtocolById(any(HttpServletRequest.class));
         doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/game.jsp", request, response);
     }
 
@@ -75,7 +77,7 @@ public class testAddEventAction {
     private String[] setPlayersIdArray(int n) {
         playersIdArray = new String[n];
         for (int i=0; i<n; i++) {
-            playersIdArray[i]= String.valueOf(i);
+            playersIdArray[i]= String.valueOf(playerList.get(i).getId());
         }
         return playersIdArray;
     }
@@ -95,38 +97,37 @@ public class testAddEventAction {
         spyGameController.setGameService(spyGameService);
         Protocol protocol = new Protocol("11.11.11", "Football", 111);
         Protocol spyProtocol = spy(protocol);
-        doReturn(spyProtocol).when(spyGameController).searchProtocolById(request);
+        doReturn(spyProtocol).when(spyGameService).searchProtocolById(request);
         spyGameController.addEventAction(request, response);
         verify(spyProtocol, times(1)).setEvents(any(Event.class));
     }
 
     @Test
     public void testAddEventActionCallGetPlayer() throws Exception {
-        playersIdArray = setPlayersIdArray(7);
+        playersIdArray = setPlayersIdArray(3);
         when(request.getParameterValues("players[]")).thenReturn(playersIdArray);
         spyGameController.setGameService(spyGameService);
         spyGameController.addEventAction(request, response);
-        verify(spyGameService, times(7)).getPlayer(anyLong());
+        verify(spyGameService, times(3)).getPlayer(anyLong());
     }
-
 
     @Test
     public void testAddEventActionCallSearchProtocolById() throws Exception {
-        playersIdArray = setPlayersIdArray(7);
+        playersIdArray = setPlayersIdArray(3);
         when(request.getParameterValues("players[]")).thenReturn(playersIdArray);
         spyGameController.setGameService(spyGameService);
         spyGameController.addEventAction(request, response);
-        verify(spyGameController, times(1)).searchProtocolById(request);
+        verify(spyGameService, times(1)).searchProtocolById(request);
     }
 
     @Test
     public void testAddEventActionNotCallSetDate() throws Exception {
         when(request.getParameter("date")).thenReturn(null);
-        playersIdArray = setPlayersIdArray(7);
+        playersIdArray = setPlayersIdArray(3);
         when(request.getParameterValues("players[]")).thenReturn(playersIdArray);
         Protocol protocol = new Protocol("11.11.11", "Football", 111);
         Protocol spyProtocol = spy(protocol);
-        doReturn(spyProtocol).when(spyGameController).searchProtocolById(request);
+        doReturn(spyProtocol).when(spyGameService).searchProtocolById(request);
         spyGameController.setGameService(spyGameService);
         spyGameController.addEventAction(request, response);
         verify(spyProtocol, times(0)).setDate(anyString());
@@ -134,11 +135,11 @@ public class testAddEventAction {
 
     @Test
     public void testAddEventActionCallSetDate() throws Exception {
-        playersIdArray = setPlayersIdArray(7);
+        playersIdArray = setPlayersIdArray(3);
         when(request.getParameterValues("players[]")).thenReturn(playersIdArray);
         Protocol protocol = new Protocol("11.11.11", "Football", 111);
         Protocol spyProtocol = spy(protocol);
-        doReturn(spyProtocol).when(spyGameController).searchProtocolById(request);
+        doReturn(spyProtocol).when(spyGameService).searchProtocolById(request);
         spyGameController.setGameService(spyGameService);
         spyGameController.addEventAction(request, response);
         verify(spyProtocol, times(1)).setDate(anyString());

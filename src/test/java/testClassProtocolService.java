@@ -141,6 +141,6 @@ public class testClassProtocolService {
         ProtocolService spyProtoService = Mockito.spy(protoService);
         expectedException.expect(Exception.class);
         expectedException.expectMessage("The Protocol id 0 not found");
-        given(ProtocolList.getProtocol( 0)).willThrow(new Exception("The Protocol id 0 not found"));
+        given(ProtocolList.searchEntityById( 0)).willThrow(new Exception("The Protocol id 0 not found"));
     }
 }

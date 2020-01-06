@@ -24,6 +24,10 @@ public class ProtocolList extends EntityList {
         }
     }
 
+    public void addProtocol(Protocol proto) {
+        protocolList.add(proto);
+    }
+
     public static List<Entity> getInstance() {
         return protocolList;
     }

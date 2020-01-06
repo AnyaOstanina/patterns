@@ -1,48 +1,39 @@
 package com.electricalweb.controllers;
 
 import com.electricalweb.entities.*;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Optional;
 
 public class GameService {
     List<Entity> eventList = EventList.getInstance();
-    List<Entity> protocolList = ProtocolList.getInstance();
-    List<Entity> playerList = PlayerList.getInstance();
+    public ProtocolList protocolList =  new ProtocolList();
+    public  PlayerList playerList = new PlayerList();
     List<Entity> gameList = GameList.getInstance();
-    public List<Entity> getAllEvents() {
-        return eventList;
-    }
     public List<Entity> getAllGames() {
         return gameList;
     }
 
     public List<Entity> getAllPlayers() {
-        return playerList;
+        return playerList.getInstance();
     }
 
-
-    public List addEvent(Event event) {
-        eventList.add(event);
-        return eventList;
+    public Entity searchProtocolById(HttpServletRequest req) throws Exception {
+        long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
+        protocolList.getProtocol(idProtocol);
+        return protocolList.getProtocol(idProtocol);
     }
 
     public void addProtocol(Protocol proto) {
-        protocolList.add(proto);
+        protocolList.addProtocol(proto);
     }
 
     public Entity getPlayer(long id) throws Exception {
-        Optional<Entity> match
-                = playerList.stream()
-                .filter(e -> e.getId() == id)
-                .findFirst();
-        if (match.isPresent()) {
-            return match.get();
-        } else {
-            throw new Exception("The Game id " + id + " not found");
-        }
+        return playerList.searchEntityById(id);
     }
 
     public List<Entity> getAllProtocols() {
-        return protocolList;
+        return protocolList.getInstance();
     }
 }

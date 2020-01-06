@@ -21,7 +21,7 @@ public class ProtocolController extends HttpServlet {
             long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
         Protocol protocol= null;
         try {
-            protocol = (Protocol) ProtocolList.getProtocol(idProtocol);
+            protocol = (Protocol) ProtocolList.searchEntityById(idProtocol);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,7 +58,7 @@ public class ProtocolController extends HttpServlet {
         long idProtocol = Integer.parseInt(req.getParameter("idProtocol"));
         Protocol protocol= null;
         try {
-            protocol = (Protocol) ProtocolList.getProtocol(idProtocol);
+            protocol = (Protocol) ProtocolList.searchEntityById(idProtocol);
         } catch (Exception e) {
             e.printStackTrace();
         }

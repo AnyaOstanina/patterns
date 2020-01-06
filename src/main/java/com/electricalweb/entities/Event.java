@@ -29,10 +29,10 @@ public class Event implements Entity {
         return id;
     }
 
-    public static Event createEventObject(HttpServletRequest req) throws Exception {
+    public static Event createEventObject(HttpServletRequest req, PlayerList playerList) throws Exception {
         String name = req.getParameter("name");
         String time = req.getParameter("time");
         String[] players = req.getParameterValues("players[]");
-        return new Event(name, time, PlayerList.createPlayersList(players));
+        return new Event(name, time, playerList.createPlayersList(players, playerList));
     }
 }
