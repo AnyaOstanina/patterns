@@ -6,9 +6,12 @@ import java.util.Map;
 import java.util.List;
 
 public class ProtocolService extends Service {
+    public ProtocolService() {
+        super("/WEB-INF/views/protocol.jsp");
+    }
     public ProtocolList protoList = new ProtocolList();
     List<IEntity> protocolList = protoList.getInstance();
-
+    public String defaultUrl = "/WEB-INF/views/protocol.jsp";
     public void setProtoList(List<IEntity> protoList) {
         this.protocolList = protoList;
     }
@@ -56,9 +59,5 @@ public class ProtocolService extends Service {
 
     private boolean isGoal(List<Event> events, int i) {
         return events.get(i).getName().equalsIgnoreCase("goal") || events.get(i).getName().equalsIgnoreCase("гол");
-    }
-
-    public String determineUrl() {
-        return "/WEB-INF/views/protocol.jsp";
     }
 }

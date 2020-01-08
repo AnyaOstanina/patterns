@@ -1,16 +1,19 @@
 package com.electricalweb.controllers;
 import com.electricalweb.entities.*;
 import com.electricalweb.interfaces.IEntity;
-import javax.servlet.ServletException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.List;
 
 public class GameService extends Service {
+    public GameService() {
+        super("/WEB-INF/views/game.jsp");
+    }
     public ProtocolList protocolList =  new ProtocolList();
     public  PlayerList playerList = new PlayerList();
     public  GameList gameList = new GameList();
+    public String defaultUrl = "/WEB-INF/views/game.jsp";
     public List<IEntity> getAllGames() {
         return gameList.getInstance();
     }
@@ -31,10 +34,6 @@ public class GameService extends Service {
 
     public IEntity getPlayer(long id) throws Exception {
         return playerList.searchEntityById(id);
-    }
-
-    public String determineUrl() {
-        return "/WEB-INF/views/game.jsp";
     }
 
     public void setAttributes(HttpServletRequest req) {

@@ -1,14 +1,16 @@
 package com.electricalweb.controllers;
 import com.electricalweb.entities.*;
 import com.electricalweb.interfaces.IEntity;
-import javax.servlet.ServletException;
+
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.List;
 
 public class TeamService extends Service {
+    public TeamService() {
+        super("/WEB-INF/views/team.jsp");
+    }
     TeamList teamList = new TeamList();
+    public String defaultUrl = "/WEB-INF/views/team.jsp";
 
     public List getAllTeams() {
         return  teamList.getInstance();
@@ -19,9 +21,5 @@ public class TeamService extends Service {
         Team team = new Team(name);
         teamList.addTeam(team);
         return teamList.getInstance();
-    }
-
-    public String determineUrl() {
-        return "/WEB-INF/views/team.jsp";
     }
 }

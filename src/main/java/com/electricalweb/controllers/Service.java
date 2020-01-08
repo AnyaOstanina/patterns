@@ -6,6 +6,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class Service implements IService {
+    public String defaultUrl;
+
+    public Service(String defaultUrl) {
+        this.defaultUrl = defaultUrl;
+    }
+
+    public String determineUrl() {
+        return defaultUrl;
+    }
+
     public void forwardResponse(String url, HttpServletRequest request, HttpServletResponse response) {
         try {
             request.getRequestDispatcher(url).forward(request, response);
