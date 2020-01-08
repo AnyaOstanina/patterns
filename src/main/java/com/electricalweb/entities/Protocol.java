@@ -1,6 +1,5 @@
 package com.electricalweb.entities;
 import com.electricalweb.interfaces.Entity;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -25,9 +24,6 @@ public class Protocol  implements Entity {
     }
     public void setDate(String Date) {
          date = Date;
-    }
-    public String getGame() {
-        return game;
     }
     public long getCreatorId() {
         return creatorId;

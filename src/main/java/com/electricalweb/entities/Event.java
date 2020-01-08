@@ -1,6 +1,5 @@
 package com.electricalweb.entities;
 import com.electricalweb.interfaces.Entity;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -20,9 +19,6 @@ public class Event implements Entity {
     }
     public String getName() {
         return name;
-    }
-    public String getTime() {
-        return time;
     }
     public List<Player> getPlayers() {
         return players;

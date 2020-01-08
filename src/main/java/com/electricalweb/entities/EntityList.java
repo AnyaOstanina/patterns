@@ -1,8 +1,6 @@
 package com.electricalweb.entities;
-
 import com.electricalweb.interfaces.Entity;
 import com.electricalweb.interfaces.IEntityList;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -17,7 +15,6 @@ public class EntityList implements IEntityList {
     public List<Entity> getInstance() {
         return entityList;
     }
-
 
     public Entity searchEntityById(long id) throws Exception {
         Optional<Entity> match
