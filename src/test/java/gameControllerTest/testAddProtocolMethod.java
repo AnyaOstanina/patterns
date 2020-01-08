@@ -32,9 +32,15 @@ public class testAddProtocolMethod {
     @Captor
     ArgumentCaptor<HttpServletRequest> requestCaptor;
 
+    private GameController gameController ;
+    private GameController spyGameController;
+    private GameService gameService ;
+    private GameService spyGameService;
+
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
+        initSpy();
         when(request.getParameter("gameName")).thenReturn("Football");
         when(request.getParameter("date")).thenReturn("11.11.11");
         when(request.getParameter("idCustomer")).thenReturn(String.valueOf(1111));
@@ -43,13 +49,19 @@ public class testAddProtocolMethod {
         when(request.getParameter("idProtocol")).thenReturn("111");
     }
 
+    private void initSpy() {
+        gameController = new GameController();
+        spyGameController =  Mockito.spy(gameController);
+        gameService = new GameService();
+        spyGameService =  Mockito.spy(gameService);
+        spyGameController.setGameService(spyGameService);
+    }
+
     @Test
     public void testAddProtocolCheckParameters() throws Exception {
-        GameController gameController = new GameController();
-        GameController spyGameController =  Mockito.spy(gameController);
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
         spyGameController.addProtocol(request, response);
-        verify(spyGameController).forwardResponse(stringCaptor.capture(),requestCaptor.capture(),responseCaptor.capture());
+        verify(spyGameService).forwardResponse(stringCaptor.capture(),requestCaptor.capture(),responseCaptor.capture());
         assertEquals("/WEB-INF/views/customerinfo.jsp", stringCaptor.getValue());
         assertEquals(request, requestCaptor.getValue());
         assertEquals(response, responseCaptor.getValue());
@@ -57,93 +69,63 @@ public class testAddProtocolMethod {
 
     @Test
     public void testAddProtocolCallSetProtocols() throws Exception {
-        GameController gameController = new GameController();
-        GameController spyGameController =  Mockito.spy(gameController);
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
         spyGameController.addProtocol(request, response);
         verify(request, times(1)).setAttribute(eq("protocols"), anyList());
     }
 
     @Test
     public void testAddProtocolCallSetPlayers() throws Exception {
-        GameController gameController = new GameController();
-        GameController spyGameController =  Mockito.spy(gameController);
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
         spyGameController.addProtocol(request, response);
         verify(request, times(1)).setAttribute(eq("players"), anyList());
     }
 
     @Test
     public void testAddProtocolCallSetGameList() throws Exception {
-        GameController gameController = new GameController();
-        GameController spyGameController =  Mockito.spy(gameController);
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
         spyGameController.addProtocol(request, response);
         verify(request, times(1)).setAttribute(eq("gameList"), anyList());
     }
 
     @Test
     public void testAddProtocolCallSetIdCustomer() throws Exception {
-        GameController gameController = new GameController();
-        GameController spyGameController =  Mockito.spy(gameController);
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
         spyGameController.addProtocol(request, response);
         verify(request, times(1)).setAttribute(eq("idCustomer"), anyString());
     }
 
     @Test
     public void testAddProtocolCallSetProtocol() throws Exception {
-        GameController gameController = new GameController();
-        GameController spyGameController =  Mockito.spy(gameController);
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
         spyGameController.addProtocol(request, response);
         verify(request, times(1)).setAttribute(eq("protocol"), any(Protocol.class));
     }
 
     @Test
     public void testAddProtocolToList() throws Exception {
-        GameController gameController = new GameController();
-        GameController spyGameController =  Mockito.spy(gameController);
-        GameService gameService = new GameService();
-        GameService spyGameService =  Mockito.spy(gameService);
-        spyGameController.setGameService(spyGameService);
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
         spyGameController.addProtocol(request, response);
         verify(spyGameService, times(1)).addProtocol(any(Protocol.class));
     }
 
     @Test
     public void testGetAllProtocols() throws Exception {
-        GameController gameController = new GameController();
-        GameController spyGameController =  Mockito.spy(gameController);
-        GameService gameService = new GameService();
-        GameService spyGameService =  Mockito.spy(gameService);
-        spyGameController.setGameService(spyGameService);
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
         spyGameController.addProtocol(request, response);
         verify(spyGameService, times(1)).getAllProtocols();
     }
 
     @Test
     public void testGetAllPlayers() throws Exception {
-        GameController gameController = new GameController();
-        GameController spyGameController =  Mockito.spy(gameController);
-        GameService gameService = new GameService();
-        GameService spyGameService =  Mockito.spy(gameService);
-        spyGameController.setGameService(spyGameService);
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
         spyGameController.addProtocol(request, response);
         verify(spyGameService, times(1)).getAllPlayers();
     }
 
     @Test
     public void testGetAllGames() throws Exception {
-        GameController gameController = new GameController();
-        GameController spyGameController =  Mockito.spy(gameController);
-        GameService gameService = new GameService();
-        GameService spyGameService =  Mockito.spy(gameService);
-        spyGameController.setGameService(spyGameService);
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
         spyGameController.addProtocol(request, response);
         verify(spyGameService, times(1)).getAllGames();
     }

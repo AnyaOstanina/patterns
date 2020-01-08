@@ -65,54 +65,58 @@ public class testDoPost {
         when(request.getParameter("idProtocol")).thenReturn("111");
         setPlayersIdArray(1);
         when(request.getParameterValues("players[]")).thenReturn(playersIdArray);
+        initSpy();
+    }
+
+    private void initSpy() {
         gameController = new GameController();
         spyGameController =  Mockito.spy(gameController);
         gameService = new GameService();
         spyGameService =  Mockito.spy(gameService);
+        spyGameController.setGameService(spyGameService);
     }
-
     //start test method doPost
     @Test
     public void testDoPostForwardResponseCalledOnce() throws IOException, ServletException, NullPointerException {
         when(request.getParameter("action")).thenReturn(null);
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/game.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/game.jsp", request, response);
         spyGameController.doPost(request, response);
-        verify(spyGameController, times(1)).forwardResponse("/WEB-INF/views/game.jsp", request, response);
+        verify(spyGameService, times(1)).forwardResponse("/WEB-INF/views/game.jsp", request, response);
     }
 
     @Test
     public void testDoPostCallSetProtocols() throws Exception {
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/game.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/game.jsp", request, response);
         spyGameController.doPost(request, response);
         verify(request, times(1)).setAttribute(eq("protocols"), anyList());
     }
 
     @Test
     public void testDoPostCallSetPlayers() throws Exception {
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/game.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/game.jsp", request, response);
         spyGameController.doPost(request, response);
         verify(request, times(1)).setAttribute(eq("players"), anyList());
     }
 
     @Test
     public void testDoPostCallSetIdCustomer() throws Exception {
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/game.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/game.jsp", request, response);
         spyGameController.doPost(request, response);
         verify(request, times(1)).setAttribute(eq("idCustomer"), anyString());
     }
 
     @Test
     public void testDoPostCallSetProtocol() throws Exception {
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/game.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/game.jsp", request, response);
         spyGameController.doPost(request, response);
         verify(request, times(1)).setAttribute(eq("protocol"), any(Protocol.class));
     }
 
     @Test
     public void testForwardResponseParams() throws ServletException, IOException {
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/game.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/game.jsp", request, response);
         spyGameController.doPost(request, response);
-        verify(spyGameController).forwardResponse(stringCaptor.capture(),requestCaptor.capture(),responseCaptor.capture());
+        verify(spyGameService).forwardResponse(stringCaptor.capture(),requestCaptor.capture(),responseCaptor.capture());
         assertEquals(request, requestCaptor.getValue());
         assertEquals(response, responseCaptor.getValue());
         assertEquals("/WEB-INF/views/game.jsp", stringCaptor.getValue());

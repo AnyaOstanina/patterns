@@ -64,7 +64,7 @@ public class testAddEventAction {
         doReturn(new Player("Ivan", "Team 1")).when(spyGameService).getPlayer(anyLong());
         Entity protocol = new Protocol("11.11.11", "Football", 111);
         doReturn(protocol).when(spyGameService).searchProtocolById(any(HttpServletRequest.class));
-        doNothing().when(spyGameController).forwardResponse("/WEB-INF/views/game.jsp", request, response);
+        doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/game.jsp", request, response);
     }
 
     public void initSpy() {
@@ -87,7 +87,7 @@ public class testAddEventAction {
     public void testAddEventAction() throws Exception {
         spyGameController.setGameService(spyGameService);
         spyGameController.addEventAction(request, response);
-        verify(spyGameController).forwardListEvents(requestCaptor.capture(),responseCaptor.capture(),protocolCaptor.capture());
+        verify(spyGameService).forwardListEvents(requestCaptor.capture(),responseCaptor.capture(),protocolCaptor.capture());
         assertEquals(111, protocolCaptor.getValue().getCreatorId());
         assertEquals(1, protocolCaptor.getValue().getEvents().size());
     }
