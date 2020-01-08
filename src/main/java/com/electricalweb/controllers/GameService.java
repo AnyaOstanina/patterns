@@ -13,7 +13,6 @@ public class GameService extends Service {
     public ProtocolList protocolList =  new ProtocolList();
     public  PlayerList playerList = new PlayerList();
     public  GameList gameList = new GameList();
-    public String defaultUrl = "/WEB-INF/views/game.jsp";
     public List<IEntity> getAllGames() {
         return gameList.getInstance();
     }

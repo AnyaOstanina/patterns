@@ -10,7 +10,6 @@ public class TeamService extends Service {
         super("/WEB-INF/views/team.jsp");
     }
     TeamList teamList = new TeamList();
-    public String defaultUrl = "/WEB-INF/views/team.jsp";
 
     public List getAllTeams() {
         return  teamList.getInstance();

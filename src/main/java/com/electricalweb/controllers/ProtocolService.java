@@ -11,7 +11,6 @@ public class ProtocolService extends Service {
     }
     public ProtocolList protoList = new ProtocolList();
     List<IEntity> protocolList = protoList.getInstance();
-    public String defaultUrl = "/WEB-INF/views/protocol.jsp";
     public void setProtoList(List<IEntity> protoList) {
         this.protocolList = protoList;
     }
