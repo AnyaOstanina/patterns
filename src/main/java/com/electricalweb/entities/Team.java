@@ -1,7 +1,5 @@
 package com.electricalweb.entities;
-
 import com.electricalweb.interfaces.Entity;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -14,7 +12,7 @@ public class Team implements Entity {
 
     public Team(String Name) {
         this.name = Name;
-        this.players = new ArrayList<Player>();
+        this.players = new ArrayList<>();
         this.id= counter.incrementAndGet();
     }
     public String getName() {

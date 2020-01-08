@@ -1,11 +1,9 @@
 package com.electricalweb.controllers;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.electricalweb.entities.*;
-import java.io.IOException;
 
 @WebServlet(name = "GameController", urlPatterns = "/game")
 public class GameController extends HttpServlet {

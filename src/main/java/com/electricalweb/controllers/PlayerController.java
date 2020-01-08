@@ -15,8 +15,7 @@ import java.util.logging.Logger;
 public class PlayerController extends HttpServlet {
     PlayerService playerService = new PlayerService();
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         String action = req.getParameter("action");
         if (action != null) {
             switch (action) {
@@ -32,9 +31,9 @@ public class PlayerController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         long idTeam = Integer.valueOf(req.getParameter("idTeam"));
-        Team team = searchTeamById(req, resp, idTeam );
+        Team team = searchTeamById(idTeam);
         List<Player> players=team.getPlayers();
         req.setAttribute("players", players);
         req.setAttribute("idTeam", idTeam);
@@ -46,7 +45,7 @@ public class PlayerController extends HttpServlet {
             throws Exception {
         String name = req.getParameter("playerName");
         long idTeam = Integer.valueOf(req.getParameter("teamId"));
-        Team team = searchTeamById(req, resp, idTeam);
+        Team team = searchTeamById(idTeam);
         Player player = new Player(name,team.getName());
         List<Player> players=playerService.addPlayer(player, idTeam);
         req.setAttribute("players", players);
@@ -55,8 +54,7 @@ public class PlayerController extends HttpServlet {
         forwardResponse(url, req, resp);
     }
 
-    private Team searchTeamById(HttpServletRequest req, HttpServletResponse resp, long id)
-            throws ServletException, IOException {
+    private Team searchTeamById(long id) {
         Team team = null;
         try {
             team = (Team) playerService.teamList.searchEntityById(id);

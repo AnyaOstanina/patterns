@@ -1,23 +1,19 @@
 package com.electricalweb.controllers;
-
 import com.electricalweb.entities.Player;
 import com.electricalweb.entities.Protocol;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import com.electricalweb.entities.ProtocolList;
 import java.util.Map;
 
 @WebServlet(name = "ProtocolController", urlPatterns = "/protocol")
 public class ProtocolController extends HttpServlet {
     ProtocolService protoService = new ProtocolService();
     @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) {
             long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
         Protocol protocol= null;
         try {

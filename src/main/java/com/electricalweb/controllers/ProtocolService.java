@@ -1,7 +1,6 @@
 package com.electricalweb.controllers;
 import com.electricalweb.entities.*;
 import com.electricalweb.interfaces.Entity;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;

@@ -1,8 +1,6 @@
 package com.electricalweb.controllers;
-
 import com.electricalweb.entities.*;
 import com.electricalweb.interfaces.Entity;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

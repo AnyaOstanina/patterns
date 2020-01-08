@@ -25,14 +25,6 @@ public class CustomerController extends HttpServlet {
             e.printStackTrace();
         }
 
-//        String url = determineUrl();
-//        List<Game> gameList = GameList.getInstance();
-//        List<Protocol> protocols = gameService.getAllProtocols();
-//        request.setAttribute("protocols", protocols);
-//        request.setAttribute("idCustomer", customer.getId());
-//        request.setAttribute("gameList", gameList);
-//        forwardResponse(url, request, response);
-
         if(customer != null) {
             String url = determineUrl();
             List<Entity> gameList = gameService.gameList.getInstance();
