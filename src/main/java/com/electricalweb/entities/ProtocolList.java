@@ -12,18 +12,6 @@ public class ProtocolList extends EntityList {
         super(protocolList);
     }
 
-    public static Entity getProtocol(long id) throws Exception {
-        Optional<Entity> match
-                = getInstance().stream()
-                .filter(e -> e.getId() == id)
-                .findFirst();
-        if (match.isPresent()) {
-            return match.get();
-        } else {
-            throw new Exception("The Protocol id " + id + " not found");
-        }
-    }
-
     public void addProtocol(Protocol proto) {
         protocolList.add(proto);
     }

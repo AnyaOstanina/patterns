@@ -1,24 +1,15 @@
-import com.electricalweb.controllers.ProtocolController;
-import com.electricalweb.controllers.ProtocolService;
 import com.electricalweb.controllers.TeamController;
 import com.electricalweb.controllers.TeamService;
 import com.electricalweb.entities.*;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.mockito.*;
-
-import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class testClassTeamController {
@@ -28,15 +19,6 @@ public class testClassTeamController {
     @Mock
     HttpServletResponse response;
 
-    @Captor
-    ArgumentCaptor<HttpServletResponse> responseCaptor;
-
-    @Captor
-    ArgumentCaptor<HttpServletRequest> requestCaptor;
-
-    @Captor
-    ArgumentCaptor<String> stringCaptor;
-
     private TeamController teamController;
     private TeamController spyTeamController;
     private TeamService teamService;
@@ -44,10 +26,9 @@ public class testClassTeamController {
 
     private Team team;
     private List<Team> teamList;
-    private Map<Player, Integer> play;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
         teamController = new TeamController();
         spyTeamController = Mockito.spy(teamController);
@@ -56,14 +37,14 @@ public class testClassTeamController {
         spyTeamController.setTeamService(spyTeamService);
         team = new Team("Team 1");
         when(request.getParameter("teamName")).thenReturn("Team 1");
-        doNothing().when(spyTeamController).forwardResponse("/WEB-INF/views/team.jsp", request, response);
+        doNothing().when(spyTeamService).forwardResponse("/WEB-INF/views/team.jsp", request, response);
         when(request.getParameter("date")).thenReturn("11.11.11");
         teamList = new ArrayList<>();
         teamList.add(team);
     }
 
     @Test
-    public void testDoPostCallGetAllTeams() throws Exception {
+    public void testDoPostCallGetAllTeams() {
         when(request.getParameter("action")).thenReturn(null);
         spyTeamController.setTeamService(spyTeamService);
         spyTeamController.doPost(request, response);
@@ -71,22 +52,22 @@ public class testClassTeamController {
     }
 
     @Test
-    public void testDoPostCallAddTeam() throws Exception {
+    public void testDoPostCallAddTeam() {
         when(request.getParameter("action")).thenReturn("addTeam");
         spyTeamController.setTeamService(spyTeamService);
         spyTeamController.doPost(request, response);
-        verify(spyTeamService, times(1)).addTeam(any(Team.class));
+        verify(spyTeamService, times(1)).addTeam(request);
     }
 
     @Test
-    public void testDoPostCallSetAttrTeam() throws Exception {
+    public void testDoPostCallSetAttrTeam() {
         when(request.getParameter("action")).thenReturn("addTeam");
         spyTeamController.doPost(request, response);
         verify(request, times(1)).setAttribute(eq("teams"), anyList());
     }
 
     @Test
-    public void testDoGet() throws Exception {
+    public void testDoGet() {
         when(spyTeamService.getAllTeams()).thenReturn(teamList);
         spyTeamController.setTeamService(spyTeamService);
         spyTeamController.doGet(request, response);

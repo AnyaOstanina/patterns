@@ -15,14 +15,15 @@ public class GameService {
         return gameList;
     }
 
+
     public List<Entity> getAllPlayers() {
         return playerList.getInstance();
     }
 
     public Entity searchProtocolById(HttpServletRequest req) throws Exception {
         long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
-        protocolList.getProtocol(idProtocol);
-        return protocolList.getProtocol(idProtocol);
+        protocolList.searchEntityById(idProtocol);
+        return protocolList.searchEntityById(idProtocol);
     }
 
     public void addProtocol(Protocol proto) {
