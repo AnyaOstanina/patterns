@@ -25,6 +25,9 @@ public class Protocol  implements Entity {
     public void setDate(String Date) {
          date = Date;
     }
+    public String getGame() {
+        return game;
+    }
     public long getCreatorId() {
         return creatorId;
     }

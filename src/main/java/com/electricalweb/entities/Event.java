@@ -20,6 +20,9 @@ public class Event implements Entity {
     public String getName() {
         return name;
     }
+    public String getTime() {
+        return time;
+    }
     public List<Player> getPlayers() {
         return players;
     }
