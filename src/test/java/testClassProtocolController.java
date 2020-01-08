@@ -1,15 +1,13 @@
-import com.electricalweb.controllers.GameController;
-import com.electricalweb.controllers.GameService;
 import com.electricalweb.controllers.ProtocolController;
 import com.electricalweb.controllers.ProtocolService;
-import com.electricalweb.entities.Entity;
+import com.electricalweb.interfaces.Entity;
 import com.electricalweb.entities.Player;
 import com.electricalweb.entities.Protocol;
 import com.electricalweb.entities.ProtocolList;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.*;
-import org.mockito.internal.util.reflection.FieldSetter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -51,8 +49,8 @@ public class testClassProtocolController {
         MockitoAnnotations.initMocks(this);
         proto = new Protocol("11.11.11", "Football", 111);
         when(request.getParameter("idProtocol")).thenReturn(String.valueOf(proto.getId()));
-        protoList = ProtocolList.getInstance();
-        protoList.add(proto);
+        ProtocolList protoList = new ProtocolList();
+        protoList.addProtocol(proto);
         play = new HashMap<Player, Integer>();
         play.put(new Player("Ivan", "One"), 0);
         initSpy();

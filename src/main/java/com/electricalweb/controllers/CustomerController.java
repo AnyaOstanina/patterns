@@ -1,17 +1,14 @@
 package com.electricalweb.controllers;
 
 import com.electricalweb.entities.*;
-import com.electricalweb.validators.EmailValidator;
-import com.electricalweb.validators.StringValidator;
+import com.electricalweb.interfaces.Entity;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "CustomerController", urlPatterns = "/processcustomer")
@@ -38,7 +35,7 @@ public class CustomerController extends HttpServlet {
 
         if(customer != null) {
             String url = determineUrl();
-            List<Entity> gameList = GameList.getInstance();
+            List<Entity> gameList = gameService.gameList.getInstance();
             List<Entity> protocols = gameService.getAllProtocols();
             request.setAttribute("protocols", protocols);
             request.setAttribute("idCustomer", customer.getId());

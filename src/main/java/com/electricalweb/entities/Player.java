@@ -1,4 +1,6 @@
 package com.electricalweb.entities;
+import com.electricalweb.interfaces.Entity;
+
 import java.util.concurrent.atomic.AtomicLong;
 
 public class Player implements Entity {

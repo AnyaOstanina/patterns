@@ -1,6 +1,7 @@
 package com.electricalweb.entities;
 
-import java.util.List;
+import com.electricalweb.interfaces.Entity;
+
 import java.util.concurrent.atomic.AtomicLong;
 
 public class Game implements Entity {

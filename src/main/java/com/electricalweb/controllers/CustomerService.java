@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public class CustomerService {
     List<Customer> customerList = CustomerList.getInstance();
+    GameList gameList = new GameList();
 
     public List getAllCustomers() {
         return  customerList;

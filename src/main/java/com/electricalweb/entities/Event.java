@@ -1,4 +1,6 @@
 package com.electricalweb.entities;
+import com.electricalweb.interfaces.Entity;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;

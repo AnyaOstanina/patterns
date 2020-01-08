@@ -1,10 +1,12 @@
 package com.electricalweb.entities;
 
+import com.electricalweb.interfaces.Entity;
+import com.electricalweb.interfaces.IEntityList;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-public class ProtocolList extends EntityList {
+public class ProtocolList extends EntityList implements IEntityList {
 
     private static final List<Entity> protocolList = new ArrayList();
 
@@ -16,7 +18,8 @@ public class ProtocolList extends EntityList {
         protocolList.add(proto);
     }
 
-    public static List<Entity> getInstance() {
+    @Override
+    public List<Entity> getInstance() {
         return protocolList;
     }
 }

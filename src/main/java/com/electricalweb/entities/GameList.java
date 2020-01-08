@@ -1,9 +1,12 @@
 package com.electricalweb.entities;
 
+import com.electricalweb.interfaces.Entity;
+import com.electricalweb.interfaces.IEntityList;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameList extends EntityList{
+public class GameList extends EntityList implements IEntityList {
         private static final List<Entity> gameList = new ArrayList();
 
         public GameList(){
@@ -15,7 +18,8 @@ public class GameList extends EntityList{
             gameList.add(new Game("Football"));
         }
 
-        public static List <Entity> getInstance(){
+        @Override
+        public List <Entity> getInstance(){
             return gameList;
         }
 }

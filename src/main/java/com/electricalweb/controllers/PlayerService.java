@@ -6,17 +6,17 @@ import java.util.List;
 import java.util.Optional;
 
 public class PlayerService {
-    List<Entity> playerList = PlayerList.getInstance();
-    List<Entity> teamList = TeamList.getInstance();
+    PlayerList playerList = new PlayerList();
+    TeamList teamList = new TeamList();
 
 
     public List getAllPlayers() {
-        return  playerList;
+        return  playerList.getInstance();
     }
 
     public List addPlayer(Player player, long id) throws Exception {
-        playerList.add(player);
-        Team team = (Team) TeamList.searchEntityById(id);
+        playerList.addPlayer(player);
+        Team team = (Team) teamList.searchEntityById(id);
         team.setPlayer(player);
         return team.getPlayers();
     }

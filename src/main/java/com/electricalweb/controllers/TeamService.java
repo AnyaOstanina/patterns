@@ -1,6 +1,7 @@
 package com.electricalweb.controllers;
 
 import com.electricalweb.entities.*;
+import com.electricalweb.interfaces.Entity;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -9,17 +10,17 @@ import java.io.IOException;
 import java.util.List;
 
 public class TeamService {
-    List<Entity> teamList = TeamList.getInstance();
+    TeamList teamList = new TeamList();
 
     public List getAllTeams() {
-        return  teamList;
+        return  teamList.getInstance();
     }
 
     public List<Entity> addTeam(HttpServletRequest req) {
         String name = req.getParameter("teamName");
         Team team = new Team(name);
-        teamList.add(team);
-        return teamList;
+        teamList.addTeam(team);
+        return teamList.getInstance();
     }
 
     public String determineUrl() {

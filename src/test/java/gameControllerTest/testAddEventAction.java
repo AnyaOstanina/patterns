@@ -3,6 +3,7 @@ package gameControllerTest;
 import com.electricalweb.controllers.GameController;
 import com.electricalweb.controllers.GameService;
 import com.electricalweb.entities.*;
+import com.electricalweb.interfaces.Entity;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.*;
@@ -10,7 +11,6 @@ import org.mockito.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;

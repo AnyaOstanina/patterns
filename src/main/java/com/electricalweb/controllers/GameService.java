@@ -1,20 +1,18 @@
 package com.electricalweb.controllers;
 
 import com.electricalweb.entities.*;
+import com.electricalweb.interfaces.Entity;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-import java.util.Optional;
 
 public class GameService {
-    List<Entity> eventList = EventList.getInstance();
     public ProtocolList protocolList =  new ProtocolList();
     public  PlayerList playerList = new PlayerList();
-    List<Entity> gameList = GameList.getInstance();
+    public  GameList gameList = new GameList();
     public List<Entity> getAllGames() {
-        return gameList;
+        return gameList.getInstance();
     }
-
 
     public List<Entity> getAllPlayers() {
         return playerList.getInstance();

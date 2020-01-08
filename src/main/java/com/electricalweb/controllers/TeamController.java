@@ -1,5 +1,5 @@
 package com.electricalweb.controllers;
-import com.electricalweb.entities.Entity;
+import com.electricalweb.interfaces.Entity;
 import com.electricalweb.entities.Team;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

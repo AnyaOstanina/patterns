@@ -1,16 +1,17 @@
 package com.electricalweb.controllers;
 import com.electricalweb.entities.*;
+import com.electricalweb.interfaces.Entity;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
-import java.util.Optional;
 
 public class ProtocolService {
-    List<Entity> protoList = ProtocolList.getInstance();
+    public ProtocolList protoList = new ProtocolList();
+    List<Entity> protocolList = protoList.getInstance();
 
     public void setProtoList(List<Entity> protoList) {
-        this.protoList = protoList;
+        this.protocolList = protoList;
     }
 
     public int getStatisticGol(Protocol protocol) {
