@@ -37,8 +37,8 @@ public class PlayerController extends HttpServlet {
         List<Player> players=team.getPlayers();
         req.setAttribute("players", players);
         req.setAttribute("idTeam", idTeam);
-        String url = determineUrl();
-        forwardResponse(url, req, resp);
+        String url = playerService.determineUrl();
+        playerService.forwardResponse(url, req, resp);
     }
 
     private void addPlayer(HttpServletRequest req, HttpServletResponse resp)
@@ -50,8 +50,8 @@ public class PlayerController extends HttpServlet {
         List<Player> players=playerService.addPlayer(player, idTeam);
         req.setAttribute("players", players);
         req.setAttribute("idTeam", req.getParameter("teamId"));
-        String url = determineUrl();
-        forwardResponse(url, req, resp);
+        String url = playerService.determineUrl();
+        playerService.forwardResponse(url, req, resp);
     }
 
     private Team searchTeamById(long id) {
@@ -62,19 +62,5 @@ public class PlayerController extends HttpServlet {
             Logger.getLogger(GameController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return team;
-    }
-
-    private String determineUrl() {
-        return "/WEB-INF/views/player.jsp";
-    }
-
-    private void forwardResponse(String url, HttpServletRequest request, HttpServletResponse response) {
-        try {
-            request.getRequestDispatcher(url).forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

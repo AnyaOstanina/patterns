@@ -1,5 +1,5 @@
 package com.electricalweb.controllers;
-import com.electricalweb.interfaces.Entity;
+import com.electricalweb.interfaces.IEntity;
 import com.electricalweb.entities.Team;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -40,7 +40,7 @@ public class TeamController extends HttpServlet {
     }
 
     public void addTeam(HttpServletRequest req, HttpServletResponse resp) {
-        List<Entity> teams = teamService.addTeam(req);
+        List<IEntity> teams = teamService.addTeam(req);
         req.setAttribute("teams", teams);
         String url = teamService.determineUrl();
         teamService.forwardResponse(url, req, resp);

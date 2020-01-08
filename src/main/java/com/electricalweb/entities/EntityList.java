@@ -1,23 +1,23 @@
 package com.electricalweb.entities;
-import com.electricalweb.interfaces.Entity;
+import com.electricalweb.interfaces.IEntity;
 import com.electricalweb.interfaces.IEntityList;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class EntityList implements IEntityList {
-    private static List<Entity> entityList = new ArrayList();
+    private static List<IEntity> entityList = new ArrayList();
 
     public EntityList(List entityList){
         this.entityList=entityList;
     }
 
-    public List<Entity> getInstance() {
+    public List<IEntity> getInstance() {
         return entityList;
     }
 
-    public Entity searchEntityById(long id) throws Exception {
-        Optional<Entity> match
+    public IEntity searchEntityById(long id) throws Exception {
+        Optional<IEntity> match
                 = this.getInstance().stream()
                 .filter(e  -> e.getId() == id)
                 .findFirst();

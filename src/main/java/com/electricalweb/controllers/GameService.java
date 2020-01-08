@@ -1,25 +1,25 @@
 package com.electricalweb.controllers;
 import com.electricalweb.entities.*;
-import com.electricalweb.interfaces.Entity;
+import com.electricalweb.interfaces.IEntity;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class GameService {
+public class GameService extends Service {
     public ProtocolList protocolList =  new ProtocolList();
     public  PlayerList playerList = new PlayerList();
     public  GameList gameList = new GameList();
-    public List<Entity> getAllGames() {
+    public List<IEntity> getAllGames() {
         return gameList.getInstance();
     }
 
-    public List<Entity> getAllPlayers() {
+    public List<IEntity> getAllPlayers() {
         return playerList.getInstance();
     }
 
-    public Entity searchProtocolById(HttpServletRequest req) throws Exception {
+    public IEntity searchProtocolById(HttpServletRequest req) throws Exception {
         long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
         protocolList.searchEntityById(idProtocol);
         return protocolList.searchEntityById(idProtocol);
@@ -29,22 +29,12 @@ public class GameService {
         protocolList.addProtocol(proto);
     }
 
-    public Entity getPlayer(long id) throws Exception {
+    public IEntity getPlayer(long id) throws Exception {
         return playerList.searchEntityById(id);
     }
 
     public String determineUrl() {
         return "/WEB-INF/views/game.jsp";
-    }
-
-    public void forwardResponse(String url, HttpServletRequest request, HttpServletResponse response) {
-        try {
-            request.getRequestDispatcher(url).forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public void setAttributes(HttpServletRequest req) {
@@ -68,7 +58,7 @@ public class GameService {
         forwardResponse(url, req, resp);
     }
 
-    public List<Entity> getAllProtocols() {
+    public List<IEntity> getAllProtocols() {
         return protocolList.getInstance();
     }
 }

@@ -1,9 +1,14 @@
 package com.electricalweb.controllers;
 import com.electricalweb.entities.*;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-public class CustomerService {
+public class CustomerService extends Service {
     List<Customer> customerList = CustomerList.getInstance();
     GameList gameList = new GameList();
 
@@ -26,5 +31,9 @@ public class CustomerService {
         } else {
             throw new Exception("not found");
         }
+    }
+
+    public String determineUrl() {
+        return "/WEB-INF/views/customerinfo.jsp";
     }
 }

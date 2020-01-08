@@ -8,63 +8,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ffd8f2d-6caa-4ced-8c90-5b54d18ffce4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/interfaces/IService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/PlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/PlayerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/TeamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/TeamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/EntityList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/EntityList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/GameList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/GameList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/PlayerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/PlayerList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Protocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Protocol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/CustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/CustomerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/GameService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/GameService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/PlayerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/PlayerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/PlayerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/PlayerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/ProtocolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/ProtocolController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/ProtocolService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/ProtocolService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/TeamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/TeamController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/TeamService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/TeamService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/CustomerList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/CustomerList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/Entity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/EntityList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/EntityList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/Event.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/EventList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/GameList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/GameList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/IEntityList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/PlayerList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/PlayerList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/Protocol.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/Protocol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/ProtocolList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/ProtocolList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/Team.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/TeamList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/entities/TeamList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/validators/BeanValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/validators/CustomerValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/validators/EmailValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/validators/StringValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/CustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/CustomerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/GameService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/GameService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/PlayerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/PlayerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/PlayerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/PlayerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/ProtocolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/ProtocolController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/ProtocolService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/ProtocolService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/TeamService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/TeamService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/CustomerList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/CustomerList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/EntityList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/EntityList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Event.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/EventList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/GameList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/GameList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/PlayerList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/PlayerList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Protocol.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Protocol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/ProtocolList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/ProtocolList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Team.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/TeamList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/TeamList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/validators/BeanValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/validators/CustomerValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/validators/EmailValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/validators/StringValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/ProtocolList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/ProtocolList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/TeamList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/TeamList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/interfaces/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/interfaces/IEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/interfaces/IEntityList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/interfaces/IEntityList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gameControllerTest/testAddEventAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gameControllerTest/testAddEventAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testClassProtocolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClassProtocolController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,8 +47,8 @@
         <option value="jsf" />
         <option value="Jsp File" />
         <option value="Kotlin Interface" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -107,6 +76,9 @@
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.electricalweb.entities" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.electricalweb.interfaces" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -324,14 +296,14 @@
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/GameService.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/game.jsp</url>
           <line>8</line>
           <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/CustomerController.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

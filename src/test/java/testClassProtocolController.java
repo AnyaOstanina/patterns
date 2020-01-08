@@ -1,6 +1,6 @@
 import com.electricalweb.controllers.ProtocolController;
 import com.electricalweb.controllers.ProtocolService;
-import com.electricalweb.interfaces.Entity;
+import com.electricalweb.interfaces.IEntity;
 import com.electricalweb.entities.Player;
 import com.electricalweb.entities.Protocol;
 import com.electricalweb.entities.ProtocolList;
@@ -41,7 +41,7 @@ public class testClassProtocolController {
     private ProtocolService spyProtocolService;
 
     private Protocol proto;
-    private List<Entity> protoList;
+    private List<IEntity> protoList;
     private Map<Player, Integer> play;
 
     @Before
@@ -70,9 +70,9 @@ public class testClassProtocolController {
         when(spyProtocolService.getStatisticGol(proto)).thenReturn(0);
         when(spyProtocolService.getStatisticGolPlayer(proto)).thenReturn(play);
         spyProtocolController.setProtoService(spyProtocolService);
-        doNothing().when(spyProtocolController).forwardResponse("/WEB-INF/views/protocol.jsp", request, response);
+        doNothing().when(spyProtocolService).forwardResponse("/WEB-INF/views/protocol.jsp", request, response);
         spyProtocolController.doPost(request, response);
-        verify(spyProtocolController).forwardResponse(stringCaptor.capture(),requestCaptor.capture(),responseCaptor.capture());
+        verify(spyProtocolService).forwardResponse(stringCaptor.capture(),requestCaptor.capture(),responseCaptor.capture());
         assertEquals(request, requestCaptor.getValue());
     }
 
@@ -82,7 +82,7 @@ public class testClassProtocolController {
         when(spyProtocolService.getStatisticGol(proto)).thenReturn(0);
         when(spyProtocolService.getStatisticGolPlayer(proto)).thenReturn(play);
         spyProtocolController.setProtoService(spyProtocolService);
-        doNothing().when(spyProtocolController).forwardResponse("/WEB-INF/views/protocol.jsp", request, response);
+        doNothing().when(spyProtocolService).forwardResponse("/WEB-INF/views/protocol.jsp", request, response);
         spyProtocolController.doPost(request, response);
         verify(request, times(1)).setAttribute(eq("protocol"), any(Protocol.class));
     }
@@ -93,8 +93,8 @@ public class testClassProtocolController {
         when(spyProtocolService.getStatisticGol(proto)).thenReturn(0);
         when(spyProtocolService.getStatisticGolPlayer(proto)).thenReturn(play);
         spyProtocolController.setProtoService(spyProtocolService);
-        doNothing().when(spyProtocolController).forwardResponse("/WEB-INF/views/protocol.jsp", request, response);
+        doNothing().when(spyProtocolService).forwardResponse("/WEB-INF/views/protocol.jsp", request, response);
         spyProtocolController.doPost(request, response);
-        verify(spyProtocolController, times(1)).forwardResponse("/WEB-INF/views/protocol.jsp", request, response);
+        verify(spyProtocolService, times(1)).forwardResponse("/WEB-INF/views/protocol.jsp", request, response);
     }
 }

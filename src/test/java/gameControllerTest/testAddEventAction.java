@@ -3,7 +3,7 @@ package gameControllerTest;
 import com.electricalweb.controllers.GameController;
 import com.electricalweb.controllers.GameService;
 import com.electricalweb.entities.*;
-import com.electricalweb.interfaces.Entity;
+import com.electricalweb.interfaces.IEntity;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.*;
@@ -39,7 +39,7 @@ public class testAddEventAction {
     private GameController spyGameController;
     private GameService gameService;
     private GameService spyGameService;
-    public  List<Entity> playerList = new PlayerList().getInstance();
+    public  List<IEntity> playerList = new PlayerList().getInstance();
 
     @Before
     public void setUp() throws Exception {
@@ -62,7 +62,7 @@ public class testAddEventAction {
 
     public void setReturningValues() throws Exception {
         doReturn(new Player("Ivan", "Team 1")).when(spyGameService).getPlayer(anyLong());
-        Entity protocol = new Protocol("11.11.11", "Football", 111);
+        IEntity protocol = new Protocol("11.11.11", "Football", 111);
         doReturn(protocol).when(spyGameService).searchProtocolById(any(HttpServletRequest.class));
         doNothing().when(spyGameService).forwardResponse("/WEB-INF/views/game.jsp", request, response);
     }

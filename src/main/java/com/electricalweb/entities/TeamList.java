@@ -1,11 +1,11 @@
 package com.electricalweb.entities;
-import com.electricalweb.interfaces.Entity;
+import com.electricalweb.interfaces.IEntity;
 import com.electricalweb.interfaces.IEntityList;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TeamList extends EntityList implements IEntityList {
-    private static final List<Entity> teamList = new ArrayList();
+    private static final List<IEntity> teamList = new ArrayList();
 
     public TeamList() {
         super(teamList);
@@ -17,12 +17,12 @@ public class TeamList extends EntityList implements IEntityList {
         teamList.add(new Team("Team3"));
     }
 
-    public void addTeam(Entity team) {
+    public void addTeam(IEntity team) {
         teamList.add(team);
     }
 
     @Override
-    public List <Entity> getInstance(){
+    public List <IEntity> getInstance(){
         return teamList;
     }
 }

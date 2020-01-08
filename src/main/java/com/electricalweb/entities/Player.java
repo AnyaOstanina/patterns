@@ -1,8 +1,8 @@
 package com.electricalweb.entities;
-import com.electricalweb.interfaces.Entity;
+import com.electricalweb.interfaces.IEntity;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Player implements Entity {
+public class Player implements IEntity {
     private long id;
     private String name;
     private String team;

@@ -1,8 +1,8 @@
 package com.electricalweb.entities;
-import com.electricalweb.interfaces.Entity;
+import com.electricalweb.interfaces.IEntity;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Game implements Entity {
+public class Game implements IEntity {
     private long id;
     private String name;
     private static final AtomicLong counter = new AtomicLong(100);

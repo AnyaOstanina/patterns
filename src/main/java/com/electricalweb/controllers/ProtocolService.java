@@ -1,15 +1,15 @@
 package com.electricalweb.controllers;
 import com.electricalweb.entities.*;
-import com.electricalweb.interfaces.Entity;
+import com.electricalweb.interfaces.IEntity;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 
-public class ProtocolService {
+public class ProtocolService extends Service {
     public ProtocolList protoList = new ProtocolList();
-    List<Entity> protocolList = protoList.getInstance();
+    List<IEntity> protocolList = protoList.getInstance();
 
-    public void setProtoList(List<Entity> protoList) {
+    public void setProtoList(List<IEntity> protoList) {
         this.protocolList = protoList;
     }
 
@@ -56,5 +56,9 @@ public class ProtocolService {
 
     private boolean isGoal(List<Event> events, int i) {
         return events.get(i).getName().equalsIgnoreCase("goal") || events.get(i).getName().equalsIgnoreCase("гол");
+    }
+
+    public String determineUrl() {
+        return "/WEB-INF/views/protocol.jsp";
     }
 }

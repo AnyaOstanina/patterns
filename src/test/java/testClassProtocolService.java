@@ -1,18 +1,14 @@
-
 import com.electricalweb.controllers.ProtocolService;
 import com.electricalweb.entities.Event;
 import com.electricalweb.entities.Player;
 import com.electricalweb.entities.Protocol;
-import com.electricalweb.entities.ProtocolList;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.mockito.Mockito;
-
 import static org.junit.Assert.*;
 import static org.mockito.BDDMockito.given;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

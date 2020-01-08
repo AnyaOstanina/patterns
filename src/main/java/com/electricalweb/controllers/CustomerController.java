@@ -1,8 +1,6 @@
 package com.electricalweb.controllers;
-
 import com.electricalweb.entities.*;
-import com.electricalweb.interfaces.Entity;
-
+import com.electricalweb.interfaces.IEntity;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,13 +24,13 @@ public class CustomerController extends HttpServlet {
         }
 
         if(customer != null) {
-            String url = determineUrl();
-            List<Entity> gameList = gameService.gameList.getInstance();
-            List<Entity> protocols = gameService.getAllProtocols();
+            String url = customerService.determineUrl();
+            List<IEntity> gameList = gameService.gameList.getInstance();
+            List<IEntity> protocols = gameService.getAllProtocols();
             request.setAttribute("protocols", protocols);
             request.setAttribute("idCustomer", customer.getId());
             request.setAttribute("gameList", gameList);
-            forwardResponse(url, request, response);
+            customerService.forwardResponse(url, request, response);
         } else {
             response.sendRedirect("http://localhost:8080/Customer_Application_war/");
         }
@@ -41,22 +39,8 @@ public class CustomerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         String url = "/WEB-INF/views/customerinfo.jsp";
-        List<Entity> protocols = gameService.getAllProtocols();
+        List<IEntity> protocols = gameService.getAllProtocols();
         req.setAttribute("protocols", protocols);
-        forwardResponse(url, req, resp);
-    }
-
-    private String determineUrl() {
-        return "/WEB-INF/views/customerinfo.jsp";
-    }
-
-    private void forwardResponse(String url, HttpServletRequest request, HttpServletResponse response) {
-        try {
-            request.getRequestDispatcher(url).forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        customerService.forwardResponse(url, req, resp);
     }
 }
