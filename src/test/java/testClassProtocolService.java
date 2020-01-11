@@ -1,4 +1,4 @@
-import com.electricalweb.controllers.ProtocolService;
+import com.electricalweb.services.ProtocolService;
 import com.electricalweb.entities.Event;
 import com.electricalweb.entities.Player;
 import com.electricalweb.entities.Protocol;

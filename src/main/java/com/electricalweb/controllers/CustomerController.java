@@ -1,6 +1,9 @@
 package com.electricalweb.controllers;
 import com.electricalweb.entities.*;
 import com.electricalweb.interfaces.IEntity;
+import com.electricalweb.services.CustomerService;
+import com.electricalweb.services.GameService;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +27,11 @@ public class CustomerController extends HttpServlet {
         }
     }
 
-    private void setAttributes(HttpServletRequest request, Customer customer) {
+    public void setCustomerService(CustomerService customerService) {
+        this.customerService = customerService;
+    }
+
+    public void setAttributes(HttpServletRequest request, Customer customer) {
         List<IEntity> gameList = gameService.gameList.getInstance();
         List<IEntity> protocols = gameService.getAllProtocols();
         request.setAttribute("protocols", protocols);
@@ -33,7 +40,7 @@ public class CustomerController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) {
         String url = "/WEB-INF/views/customerinfo.jsp";
         List<IEntity> protocols = gameService.getAllProtocols();
         req.setAttribute("protocols", protocols);

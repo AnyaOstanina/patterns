@@ -8,13 +8,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ffd8f2d-6caa-4ced-8c90-5b54d18ffce4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/testClassCustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testClassPlayerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/CustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/PlayerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/PlayerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/ProtocolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/ProtocolController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/ProtocolService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/ProtocolService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/services/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/services/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/PlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/services/PlayerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/services/ProtocolService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/services/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/TeamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/TeamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/services/TeamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/EntityList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/EntityList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/GameList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/GameList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/PlayerList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/PlayerList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Protocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Protocol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/ProtocolList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/ProtocolList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/TeamList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/entities/TeamList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/interfaces/IEntityList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/interfaces/IEntityList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gameControllerTest/testAddEventAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gameControllerTest/testAddEventAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gameControllerTest/testAddProtocolMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gameControllerTest/testAddProtocolMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gameControllerTest/testDoPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gameControllerTest/testDoPost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/gameControllerTest/testMethodDependsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/gameControllerTest/testMethodDependsAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testClassProtocolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClassProtocolController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testClassProtocolService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClassProtocolService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testClassTeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClassTeamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/CustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/CustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/GameService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/PlayerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/PlayerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/PlayerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/ProtocolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/ProtocolController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/ProtocolService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/Service.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/TeamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/TeamController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/TeamService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/EntityList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/EntityList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Event.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/GameList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/GameList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/PlayerList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/PlayerList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Protocol.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Protocol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/ProtocolList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/ProtocolList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/Team.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/TeamList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/entities/TeamList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/gameControllerTest/testAddEventAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/gameControllerTest/testAddEventAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/gameControllerTest/testAddProtocolMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/gameControllerTest/testAddProtocolMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/gameControllerTest/testDoPost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/gameControllerTest/testDoPost.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/gameControllerTest/testMethodDependsAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/gameControllerTest/testMethodDependsAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/testClassProtocolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testClassProtocolController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/testClassProtocolService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testClassProtocolService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/testClassTeamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testClassTeamController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,60 +127,52 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.testClassProtocolService">
-    <configuration name="testAddProtocolMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Customer Application" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gameControllerTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="gameControllerTest" />
-      <option name="MAIN_CLASS_NAME" value="gameControllerTest.testAddProtocolMethod" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testClassProtocolController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.testClassCustomerController">
+    <configuration name="testClassCustomerController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Customer Application" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="testClassProtocolController" />
+      <option name="MAIN_CLASS_NAME" value="testClassCustomerController" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testClassProtocolService" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testClassCustomerController.testDoGetSetForwardResponseCalledOnce" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Customer Application" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="testClassProtocolService" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="testClassCustomerController" />
+      <option name="METHOD_NAME" value="testDoGetSetForwardResponseCalledOnce" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testClassTeamController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testClassCustomerController.testDoGetSetForwardResponseNotCalled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Customer Application" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="testClassTeamController" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="testClassCustomerController" />
+      <option name="METHOD_NAME" value="testDoGetSetForwardResponseNotCalled" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testDoPost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testClassPlayerController.testAddPlayers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Customer Application" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gameControllerTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="gameControllerTest" />
-      <option name="MAIN_CLASS_NAME" value="gameControllerTest.testDoPost" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="testClassPlayerController" />
+      <option name="METHOD_NAME" value="testAddPlayers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testClassPlayerController.testDoGetSetAttributesParams" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Customer Application" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="testClassPlayerController" />
+      <option name="METHOD_NAME" value="testDoGetSetAttributesParams" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -212,11 +257,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.testClassProtocolService" />
-        <item itemvalue="JUnit.testClassProtocolController" />
-        <item itemvalue="JUnit.testClassTeamController" />
-        <item itemvalue="JUnit.testAddProtocolMethod" />
-        <item itemvalue="JUnit.testDoPost" />
+        <item itemvalue="JUnit.testClassCustomerController" />
+        <item itemvalue="JUnit.testClassCustomerController.testDoGetSetForwardResponseNotCalled" />
+        <item itemvalue="JUnit.testClassCustomerController.testDoGetSetForwardResponseCalledOnce" />
+        <item itemvalue="JUnit.testClassPlayerController.testAddPlayers" />
+        <item itemvalue="JUnit.testClassPlayerController.testDoGetSetAttributesParams" />
       </list>
     </recent_temporary>
   </component>
@@ -238,7 +283,7 @@
       <workItem from="1577367100292" duration="69168000" />
       <workItem from="1578146546372" duration="1487000" />
       <workItem from="1578287038662" duration="27304000" />
-      <workItem from="1578734772309" duration="13288000" />
+      <workItem from="1578734772309" duration="25979000" />
     </task>
     <servers />
   </component>
@@ -265,6 +310,16 @@
           <url>file://$PROJECT_DIR$/src/test/java/gameControllerTest/testAddEventAction.java</url>
           <line>88</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/electricalweb/services/CustomerService.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/CustomerController.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

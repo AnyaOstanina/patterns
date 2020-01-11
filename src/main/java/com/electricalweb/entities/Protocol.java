@@ -1,10 +1,11 @@
 package com.electricalweb.entities;
 import com.electricalweb.interfaces.IEntity;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Protocol  implements IEntity {
+public class Protocol implements IEntity {
     private long id;
     private String date;
     private String game;

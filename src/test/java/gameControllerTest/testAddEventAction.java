@@ -1,7 +1,7 @@
 package gameControllerTest;
 
 import com.electricalweb.controllers.GameController;
-import com.electricalweb.controllers.GameService;
+import com.electricalweb.services.GameService;
 import com.electricalweb.entities.*;
 import com.electricalweb.interfaces.IEntity;
 import org.junit.Before;

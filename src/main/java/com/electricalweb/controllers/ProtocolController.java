@@ -1,6 +1,8 @@
 package com.electricalweb.controllers;
 import com.electricalweb.entities.Player;
 import com.electricalweb.entities.Protocol;
+import com.electricalweb.services.ProtocolService;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,7 +34,7 @@ public class ProtocolController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) {
         Protocol protocol = protoService.getProtocolById(req);
         String url = protoService.determineUrl();
         req.setAttribute("protocol", protocol);

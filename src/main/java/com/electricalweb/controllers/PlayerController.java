@@ -1,6 +1,8 @@
 package com.electricalweb.controllers;
 import com.electricalweb.entities.Player;
 import com.electricalweb.entities.Team;
+import com.electricalweb.services.PlayerService;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,8 +28,12 @@ public class PlayerController extends HttpServlet {
         }
     }
 
+    public void setPlayerService(PlayerService playerService) {
+        this.playerService = playerService;
+    }
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) {
         long idTeam = Integer.valueOf(req.getParameter("idTeam"));
         Team team = playerService.searchTeamById(idTeam);
         List<Player> players=team.getPlayers();
@@ -36,12 +42,12 @@ public class PlayerController extends HttpServlet {
         playerService.forwardResponse(url, req, resp);
     }
 
-    private void setAttributes(HttpServletRequest req, long idTeam, List<Player> players) {
+    public void setAttributes(HttpServletRequest req, long idTeam, List<Player> players) {
         req.setAttribute("players", players);
         req.setAttribute("idTeam", idTeam);
     }
 
-    private void addPlayer(HttpServletRequest req, HttpServletResponse resp)
+    public void addPlayer(HttpServletRequest req, HttpServletResponse resp)
             throws Exception {
         String name = req.getParameter("playerName");
         long idTeam = Integer.valueOf(req.getParameter("teamId"));

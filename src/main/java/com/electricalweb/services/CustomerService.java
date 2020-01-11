@@ -1,5 +1,6 @@
-package com.electricalweb.controllers;
+package com.electricalweb.services;
 import com.electricalweb.entities.*;
+import com.electricalweb.services.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

@@ -2,20 +2,14 @@ package gameControllerTest;
 
 import static org.mockito.Mockito.when;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collection;
 
-import com.electricalweb.entities.Event;
-import com.electricalweb.entities.Player;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.electricalweb.controllers.GameController;
-import com.electricalweb.controllers.GameService;
+import com.electricalweb.services.GameService;
 import com.electricalweb.entities.Protocol;
 import org.junit.Before;
 import org.junit.Test;

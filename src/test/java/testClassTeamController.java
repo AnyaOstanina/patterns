@@ -1,5 +1,5 @@
 import com.electricalweb.controllers.TeamController;
-import com.electricalweb.controllers.TeamService;
+import com.electricalweb.services.TeamService;
 import com.electricalweb.entities.*;
 import org.junit.Before;
 import org.junit.Test;

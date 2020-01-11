@@ -1,6 +1,7 @@
 package com.electricalweb.entities;
 import com.electricalweb.interfaces.IEntity;
 import com.electricalweb.interfaces.IEntityList;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

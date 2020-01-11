@@ -1,6 +1,6 @@
 package gameControllerTest;
 import com.electricalweb.controllers.GameController;
-import com.electricalweb.controllers.GameService;
+import com.electricalweb.services.GameService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

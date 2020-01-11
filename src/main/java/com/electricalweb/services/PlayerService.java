@@ -1,5 +1,8 @@
-package com.electricalweb.controllers;
+package com.electricalweb.services;
+import com.electricalweb.controllers.GameController;
 import com.electricalweb.entities.*;
+import com.electricalweb.services.Service;
+
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;

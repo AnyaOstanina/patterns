@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.electricalweb.entities.*;
+import com.electricalweb.services.GameService;
 
 @WebServlet(name = "GameController", urlPatterns = "/game")
 public class GameController extends HttpServlet {

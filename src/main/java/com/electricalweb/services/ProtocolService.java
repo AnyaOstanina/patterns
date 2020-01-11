@@ -1,6 +1,7 @@
-package com.electricalweb.controllers;
+package com.electricalweb.services;
 import com.electricalweb.entities.*;
 import com.electricalweb.interfaces.IEntity;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;

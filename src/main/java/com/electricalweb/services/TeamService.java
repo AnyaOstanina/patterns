@@ -1,4 +1,4 @@
-package com.electricalweb.controllers;
+package com.electricalweb.services;
 import com.electricalweb.entities.*;
 import com.electricalweb.interfaces.IEntity;
 
