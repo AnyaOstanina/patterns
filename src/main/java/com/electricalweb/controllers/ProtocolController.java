@@ -18,7 +18,7 @@ public class ProtocolController extends HttpServlet {
     }
 
     private void setAttributes(HttpServletRequest req) {
-        Protocol protocol = getProtocolById(req);
+        Protocol protocol = protoService.getProtocolById(req);
         req.setAttribute("protocol", protocol);
         int gol = protoService.getStatisticGol(protocol);
         Map<Player, Integer> play = protoService.getStatisticGolPlayer(protocol);
@@ -27,24 +27,13 @@ public class ProtocolController extends HttpServlet {
         req.setAttribute("protocolStatisticPlayerGoal", play.values().stream().findFirst().get());
     }
 
-    private Protocol getProtocolById(HttpServletRequest req) {
-        long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
-        Protocol protocol = null;
-        try {
-            protocol = (Protocol) protoService.protoList.searchEntityById(idProtocol);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return protocol;
-    }
-
     public void setProtoService(ProtocolService protoService) {
         this.protoService = protoService;
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        Protocol protocol = getProtocolById(req);
+        Protocol protocol = protoService.getProtocolById(req);
         String url = protoService.determineUrl();
         req.setAttribute("protocol", protocol);
         int gol = protoService.getStatisticGol(protocol);

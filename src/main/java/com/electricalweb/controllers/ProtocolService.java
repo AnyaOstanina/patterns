@@ -1,6 +1,8 @@
 package com.electricalweb.controllers;
 import com.electricalweb.entities.*;
 import com.electricalweb.interfaces.IEntity;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
@@ -58,5 +60,16 @@ public class ProtocolService extends Service {
 
     private boolean isGoal(List<Event> events, int i) {
         return events.get(i).getName().equalsIgnoreCase("goal") || events.get(i).getName().equalsIgnoreCase("гол");
+    }
+
+    public Protocol getProtocolById(HttpServletRequest req) {
+        long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
+        Protocol protocol = null;
+        try {
+            protocol = (Protocol) protoList.searchEntityById(idProtocol);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return protocol;
     }
 }
