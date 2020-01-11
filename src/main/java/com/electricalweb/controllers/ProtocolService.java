@@ -11,17 +11,23 @@ public class ProtocolService extends Service {
         super("/WEB-INF/views/protocol.jsp");
     }
     public ProtocolList protoList = new ProtocolList();
+    private Map<Player, Integer> map = new HashMap<>();
     List<IEntity> protocolList = protoList.getInstance();
     public void setProtoList(List<IEntity> protoList) {
         this.protocolList = protoList;
     }
 
-    public int getStatisticGol(Protocol protocol) {
+    public int getStatisticGol(Protocol protocol,Boolean isForPlayer) {
         List<Event> events =  protocol.getEvents();
+        map = new HashMap<>();
         int gol = 0;
         for(int i=0; i< events.size(); i++) {
             if(isGoal(events, i)) {
                 gol++;
+                if(isForPlayer) {
+                    int count = map.containsKey(events.get(i).getPlayers().get(0)) ? map.get(events.get(i).getPlayers().get(0)) : 0;
+                    map.put(events.get(i).getPlayers().get(0), count + 1);
+                }
             }
         }
         return gol;
@@ -35,16 +41,7 @@ public class ProtocolService extends Service {
             pair.put(MockPlayer, 0);
             return pair;
         }
-
-        int gol = 0;
-        Map<Player, Integer> map = new HashMap<Player, Integer>();
-        for(int i=0; i< events.size(); i++) {
-            if(isGoal(events, i)) {
-                gol++;
-                int count = map.containsKey(events.get(i).getPlayers().get(0)) ? map.get(events.get(i).getPlayers().get(0)) : 0;
-                map.put(events.get(i).getPlayers().get(0), count + 1);
-            }
-        }
+        getStatisticGol(protocol, true);
 
         Player play = getResultOfGoalStatistic(map).getKey();
         int val = getResultOfGoalStatistic(map).getValue();

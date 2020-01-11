@@ -73,7 +73,7 @@ public class testClassProtocolService {
         Event event = new Event("aaa", "11.11.11", null);
         proto.setEvents(event);
         ProtocolService protoService = new ProtocolService();
-        int res = protoService.getStatisticGol(proto);
+        int res = protoService.getStatisticGol(proto,false);
         assertEquals(0, res);
     }
 
@@ -82,7 +82,7 @@ public class testClassProtocolService {
         Event event = new Event("goal", "11.11.11", null);
         proto.setEvents(event);
         ProtocolService protoService = new ProtocolService();
-        int res = protoService.getStatisticGol(proto);
+        int res = protoService.getStatisticGol(proto,false);
         assertEquals(1, res);
     }
 
@@ -94,7 +94,7 @@ public class testClassProtocolService {
         }
 
         ProtocolService protoService = new ProtocolService();
-        int res = protoService.getStatisticGol(proto);
+        int res = protoService.getStatisticGol(proto,false);
         assertEquals(1000, res);
     }
 
@@ -108,7 +108,7 @@ public class testClassProtocolService {
         }
 
         ProtocolService protoService = new ProtocolService();
-        int res = protoService.getStatisticGol(proto);
+        int res = protoService.getStatisticGol(proto,false);
         assertEquals(10, res);
     }
 
@@ -124,7 +124,7 @@ public class testClassProtocolService {
         }
 
         ProtocolService protoService = new ProtocolService();
-        int res = protoService.getStatisticGol(proto);
+        int res = protoService.getStatisticGol(proto,false);
         assertEquals(20, res);
     }
 

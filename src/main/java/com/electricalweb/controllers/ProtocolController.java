@@ -20,7 +20,7 @@ public class ProtocolController extends HttpServlet {
     private void setAttributes(HttpServletRequest req) {
         Protocol protocol = protoService.getProtocolById(req);
         req.setAttribute("protocol", protocol);
-        int gol = protoService.getStatisticGol(protocol);
+        int gol = protoService.getStatisticGol(protocol,false);
         Map<Player, Integer> play = protoService.getStatisticGolPlayer(protocol);
         req.setAttribute("protocolStatistic", gol);
         req.setAttribute("protocolStatisticPlayer", play.keySet().stream().findFirst().get());
@@ -36,7 +36,7 @@ public class ProtocolController extends HttpServlet {
         Protocol protocol = protoService.getProtocolById(req);
         String url = protoService.determineUrl();
         req.setAttribute("protocol", protocol);
-        int gol = protoService.getStatisticGol(protocol);
+        int gol = protoService.getStatisticGol(protocol,false);
         req.setAttribute("protocolStatistic", gol);
         protoService.forwardResponse(url, req, resp);
     }

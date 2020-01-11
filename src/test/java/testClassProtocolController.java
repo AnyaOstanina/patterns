@@ -10,6 +10,7 @@ import org.mockito.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.text.html.parser.Entity;
 
 import java.util.HashMap;
 import java.util.List;
@@ -67,7 +68,7 @@ public class testClassProtocolController {
     @Test
     public void testDoPostCheckParams() throws Exception {
         spyProtocolService.setProtoList(protoList);
-        when(spyProtocolService.getStatisticGol(proto)).thenReturn(0);
+        when(spyProtocolService.getStatisticGol(proto,false)).thenReturn(0);
         when(spyProtocolService.getStatisticGolPlayer(proto)).thenReturn(play);
         spyProtocolController.setProtoService(spyProtocolService);
         doNothing().when(spyProtocolService).forwardResponse("/WEB-INF/views/protocol.jsp", request, response);
@@ -79,7 +80,7 @@ public class testClassProtocolController {
     @Test
     public void testDoPostCheckSetAttrProtocol() throws Exception {
         spyProtocolService.setProtoList(protoList);
-        when(spyProtocolService.getStatisticGol(proto)).thenReturn(0);
+        when(spyProtocolService.getStatisticGol(proto,false)).thenReturn(0);
         when(spyProtocolService.getStatisticGolPlayer(proto)).thenReturn(play);
         spyProtocolController.setProtoService(spyProtocolService);
         doNothing().when(spyProtocolService).forwardResponse("/WEB-INF/views/protocol.jsp", request, response);
@@ -90,7 +91,7 @@ public class testClassProtocolController {
     @Test
     public void testDoPostCheckForwardResponseCalled() throws Exception {
         spyProtocolService.setProtoList(protoList);
-        when(spyProtocolService.getStatisticGol(proto)).thenReturn(0);
+        when(spyProtocolService.getStatisticGol(proto,false)).thenReturn(0);
         when(spyProtocolService.getStatisticGolPlayer(proto)).thenReturn(play);
         spyProtocolController.setProtoService(spyProtocolService);
         doNothing().when(spyProtocolService).forwardResponse("/WEB-INF/views/protocol.jsp", request, response);

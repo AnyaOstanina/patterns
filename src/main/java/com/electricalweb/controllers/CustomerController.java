@@ -32,8 +32,6 @@ public class CustomerController extends HttpServlet {
         request.setAttribute("gameList", gameList);
     }
 
-
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         String url = "/WEB-INF/views/customerinfo.jsp";
