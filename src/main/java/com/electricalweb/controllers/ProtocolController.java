@@ -12,37 +12,39 @@ public class ProtocolController extends HttpServlet {
     ProtocolService protoService = new ProtocolService();
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) {
-            long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
-        Protocol protocol= null;
-        try {
-            protocol = (Protocol) protoService.protoList.searchEntityById(idProtocol);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        setAttributes(req);
         String url = protoService.determineUrl();
+        protoService.forwardResponse(url, req, resp);
+    }
+
+    private void setAttributes(HttpServletRequest req) {
+        Protocol protocol = getProtocolById(req);
         req.setAttribute("protocol", protocol);
         int gol = protoService.getStatisticGol(protocol);
         Map<Player, Integer> play = protoService.getStatisticGolPlayer(protocol);
         req.setAttribute("protocolStatistic", gol);
         req.setAttribute("protocolStatisticPlayer", play.keySet().stream().findFirst().get());
         req.setAttribute("protocolStatisticPlayerGoal", play.values().stream().findFirst().get());
-        protoService.forwardResponse(url, req, resp);
+    }
+
+    private Protocol getProtocolById(HttpServletRequest req) {
+        long idProtocol = Integer.valueOf(req.getParameter("idProtocol"));
+        Protocol protocol = null;
+        try {
+            protocol = (Protocol) protoService.protoList.searchEntityById(idProtocol);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return protocol;
     }
 
     public void setProtoService(ProtocolService protoService) {
         this.protoService = protoService;
     }
 
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        long idProtocol = Integer.parseInt(req.getParameter("idProtocol"));
-        Protocol protocol= null;
-        try {
-            protocol = (Protocol) protoService.protoList.searchEntityById(idProtocol);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Protocol protocol = getProtocolById(req);
         String url = protoService.determineUrl();
         req.setAttribute("protocol", protocol);
         int gol = protoService.getStatisticGol(protocol);
