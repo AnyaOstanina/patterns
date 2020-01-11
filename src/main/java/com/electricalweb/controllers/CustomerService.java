@@ -1,6 +1,9 @@
 package com.electricalweb.controllers;
 import com.electricalweb.entities.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,15 +24,19 @@ public class CustomerService extends Service {
         return customerList;
     }
 
-    public Customer findCustomer(String login, String password) throws Exception {
+    public Customer getCustomerByPassword(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Customer customer = null;
+        String login = request.getParameter("login");
+        String password = request.getParameter("password");
         Optional<Customer> match
                 = customerList.stream()
                 .filter(e -> e.getLogin().equalsIgnoreCase(login) && e.getLogin().equalsIgnoreCase(password))
                 .findFirst();
         if (match.isPresent()) {
-            return match.get();
+            customer = match.get();
         } else {
-            throw new Exception("not found");
+            response.sendRedirect("http://localhost:8080/Customer_Application_war/");
         }
+        return customer;
     }
 }

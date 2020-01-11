@@ -14,8 +14,7 @@ public class CustomerController extends HttpServlet {
     CustomerService customerService = new CustomerService();
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Customer customer = null;
-        customer = getCustomerByPassword(request, response, customer);
+        Customer customer = customerService.getCustomerByPassword(request, response);
         if(customer != null) {
             setAttributes(request, customer);
             String url = customerService.determineUrl();
@@ -33,15 +32,7 @@ public class CustomerController extends HttpServlet {
         request.setAttribute("gameList", gameList);
     }
 
-    private Customer getCustomerByPassword(HttpServletRequest request, HttpServletResponse response, Customer customer) throws IOException {
-        try {
-            customer = customerService.findCustomer(request.getParameter("login"), request.getParameter("password"));
-        } catch (Exception e) {
-            response.sendRedirect("http://localhost:8080/Customer_Application_war/");
-            e.printStackTrace();
-        }
-        return customer;
-    }
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
