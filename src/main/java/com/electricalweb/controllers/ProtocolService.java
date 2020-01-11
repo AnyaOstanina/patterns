@@ -36,17 +36,20 @@ public class ProtocolService extends Service {
     public Map<Player, Integer> getStatisticGolPlayer(Protocol protocol) {
         List<Event> events =  protocol.getEvents();
         if (events.size() <= 0) {
-            Player MockPlayer = new Player("Not", "Found");
-            Map<Player, Integer> pair = new HashMap<Player, Integer>();
-            pair.put(MockPlayer, 0);
-            return pair;
+            return createMockPlayer();
         }
         getStatisticGol(protocol, true);
-
         Player play = getResultOfGoalStatistic(map).getKey();
         int val = getResultOfGoalStatistic(map).getValue();
         Map<Player, Integer> pair = new HashMap<Player, Integer>();
         pair.put(play, val);
+        return pair;
+    }
+
+    private Map<Player, Integer> createMockPlayer() {
+        Player MockPlayer = new Player("Not", "Found");
+        Map<Player, Integer> pair = new HashMap<Player, Integer>();
+        pair.put(MockPlayer, 0);
         return pair;
     }
 

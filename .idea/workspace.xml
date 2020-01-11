@@ -9,18 +9,12 @@
   <component name="ChangeListManager">
     <list default="true" id="8ffd8f2d-6caa-4ced-8c90-5b54d18ffce4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/PlayerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/ProtocolService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testClassProtocolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClassProtocolController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testClassProtocolService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClassProtocolService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Customer Application.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/CustomerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/CustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/PlayerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/PlayerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/ProtocolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/ProtocolController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/ProtocolService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Customer Application/WEB-INF/classes/com/electricalweb/controllers/ProtocolService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/PlayerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/PlayerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/ProtocolController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/ProtocolController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/ProtocolService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/ProtocolService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +74,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.testClassProtocolController">
+  <component name="RunManager" selected="JUnit.testClassProtocolService">
     <configuration name="testAddProtocolMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Customer Application" />
       <extension name="coverage">
@@ -218,8 +212,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.testClassProtocolController" />
         <item itemvalue="JUnit.testClassProtocolService" />
+        <item itemvalue="JUnit.testClassProtocolController" />
         <item itemvalue="JUnit.testClassTeamController" />
         <item itemvalue="JUnit.testAddProtocolMethod" />
         <item itemvalue="JUnit.testDoPost" />
@@ -244,7 +238,7 @@
       <workItem from="1577367100292" duration="69168000" />
       <workItem from="1578146546372" duration="1487000" />
       <workItem from="1578287038662" duration="27304000" />
-      <workItem from="1578734772309" duration="12799000" />
+      <workItem from="1578734772309" duration="13288000" />
     </task>
     <servers />
   </component>
