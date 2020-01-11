@@ -35,10 +35,14 @@ public class PlayerController extends HttpServlet {
         long idTeam = Integer.valueOf(req.getParameter("idTeam"));
         Team team = searchTeamById(idTeam);
         List<Player> players=team.getPlayers();
-        req.setAttribute("players", players);
-        req.setAttribute("idTeam", idTeam);
+        setAttributes(req, idTeam,players);
         String url = playerService.determineUrl();
         playerService.forwardResponse(url, req, resp);
+    }
+
+    private void setAttributes(HttpServletRequest req, long idTeam, List<Player> players) {
+        req.setAttribute("players", players);
+        req.setAttribute("idTeam", idTeam);
     }
 
     private void addPlayer(HttpServletRequest req, HttpServletResponse resp)
@@ -48,8 +52,7 @@ public class PlayerController extends HttpServlet {
         Team team = searchTeamById(idTeam);
         Player player = new Player(name,team.getName());
         List<Player> players=playerService.addPlayer(player, idTeam);
-        req.setAttribute("players", players);
-        req.setAttribute("idTeam", req.getParameter("teamId"));
+        setAttributes(req, idTeam, players);
         String url = playerService.determineUrl();
         playerService.forwardResponse(url, req, resp);
     }

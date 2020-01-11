@@ -9,13 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8ffd8f2d-6caa-4ced-8c90-5b54d18ffce4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/interfaces/IService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/CustomerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/Service.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/interfaces/IService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/PlayerController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -245,7 +239,7 @@
       <workItem from="1577367100292" duration="69168000" />
       <workItem from="1578146546372" duration="1487000" />
       <workItem from="1578287038662" duration="27304000" />
-      <workItem from="1578734772309" duration="598000" />
+      <workItem from="1578734772309" duration="2616000" />
     </task>
     <servers />
   </component>
