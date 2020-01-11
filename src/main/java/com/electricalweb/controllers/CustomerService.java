@@ -1,11 +1,10 @@
 package com.electricalweb.controllers;
 import com.electricalweb.entities.*;
-import com.electricalweb.interfaces.IService;
 
 import java.util.List;
 import java.util.Optional;
 
-public class CustomerService extends Service implements IService {
+public class CustomerService extends Service {
     public CustomerService() {
         super("/WEB-INF/views/customerinfo.jsp");
     }

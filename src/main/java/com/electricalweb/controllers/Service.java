@@ -1,11 +1,10 @@
 package com.electricalweb.controllers;
-import com.electricalweb.interfaces.IService;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class Service implements IService {
+public class Service{
     public String defaultUrl;
 
     public Service(String defaultUrl) {

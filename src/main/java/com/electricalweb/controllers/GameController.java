@@ -48,7 +48,6 @@ public class GameController extends HttpServlet {
         gameService.forwardResponse(url, req, resp);
     }
 
-
     public void addEventAction(HttpServletRequest req, HttpServletResponse resp)
             throws Exception {
         String date = req.getParameter("date");
