@@ -1,7 +1,6 @@
 package com.electricalweb.controllers;
 import com.electricalweb.entities.*;
 import com.electricalweb.interfaces.IEntity;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,26 +13,34 @@ public class CustomerController extends HttpServlet {
     GameService gameService = new GameService();
     CustomerService customerService = new CustomerService();
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Customer customer = null;
+        customer = getCustomerByPassword(request, response, customer);
+        if(customer != null) {
+            setAttributes(request, customer);
+            String url = customerService.determineUrl();
+            customerService.forwardResponse(url, request, response);
+        } else {
+            response.sendRedirect("http://localhost:8080/Customer_Application_war/");
+        }
+    }
+
+    private void setAttributes(HttpServletRequest request, Customer customer) {
+        List<IEntity> gameList = gameService.gameList.getInstance();
+        List<IEntity> protocols = gameService.getAllProtocols();
+        request.setAttribute("protocols", protocols);
+        request.setAttribute("idCustomer", customer.getId());
+        request.setAttribute("gameList", gameList);
+    }
+
+    private Customer getCustomerByPassword(HttpServletRequest request, HttpServletResponse response, Customer customer) throws IOException {
         try {
             customer = customerService.findCustomer(request.getParameter("login"), request.getParameter("password"));
         } catch (Exception e) {
             response.sendRedirect("http://localhost:8080/Customer_Application_war/");
             e.printStackTrace();
         }
-
-        if(customer != null) {
-            String url = customerService.determineUrl();
-            List<IEntity> gameList = gameService.gameList.getInstance();
-            List<IEntity> protocols = gameService.getAllProtocols();
-            request.setAttribute("protocols", protocols);
-            request.setAttribute("idCustomer", customer.getId());
-            request.setAttribute("gameList", gameList);
-            customerService.forwardResponse(url, request, response);
-        } else {
-            response.sendRedirect("http://localhost:8080/Customer_Application_war/");
-        }
+        return customer;
     }
 
     @Override
