@@ -16,7 +16,7 @@ public class UserController extends HttpServlet {
     UserService userService = new UserService();
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        User user = userService.getCustomerByPassword(request, response);
+        User user = userService.getUserByPassword(request, response);
         if(user != null) {
             setAttributes(request, user);
             String url = userService.determineUrl();

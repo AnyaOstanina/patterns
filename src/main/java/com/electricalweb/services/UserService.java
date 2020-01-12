@@ -15,16 +15,16 @@ public class UserService extends Service {
     List<User> userList = UserList.getInstance();
     GameList gameList = new GameList();
 
-    public List getAllCustomers() {
+    public List getAllUsers() {
         return userList;
     }
 
-    public List addCustomer(User user) {
+    public List addUser(User user) {
         userList.add(user);
         return userList;
     }
 
-    public User getCustomerByPassword(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public User getUserByPassword(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = null;
         String login = request.getParameter("login");
         String password = request.getParameter("password");

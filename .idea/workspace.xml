@@ -8,7 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ffd8f2d-6caa-4ced-8c90-5b54d18ffce4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/testClassPlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClassPlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/electricalweb/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/electricalweb/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testClassUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testClassUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/electricalweb/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/electricalweb/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/testClassUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testClassUserService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,13 +74,30 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.testClassTeamController.testForwardResponseParams">
-    <configuration name="testClassPlayerController.testForwardResponseParams" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.testClassUserController">
+    <configuration name="testClassPlayerController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Customer Application" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="testClassPlayerController" />
-      <option name="METHOD_NAME" value="testForwardResponseParams" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testClassProtocolController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Customer Application" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="testClassProtocolController" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testClassTeamController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Customer Application" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="testClassTeamController" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -94,26 +117,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="testClassUserController" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testClassUserController.testDoGetSetForwardResponseNotCalled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Customer Application" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="testClassUserController" />
-      <option name="METHOD_NAME" value="testDoGetSetForwardResponseNotCalled" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testClassUserController.testForwardResponseParams" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Customer Application" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="testClassUserController" />
-      <option name="METHOD_NAME" value="testForwardResponseParams" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -198,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.testClassTeamController.testForwardResponseParams" />
-        <item itemvalue="JUnit.testClassPlayerController.testForwardResponseParams" />
         <item itemvalue="JUnit.testClassUserController" />
-        <item itemvalue="JUnit.testClassUserController.testForwardResponseParams" />
-        <item itemvalue="JUnit.testClassUserController.testDoGetSetForwardResponseNotCalled" />
+        <item itemvalue="JUnit.testClassProtocolController" />
+        <item itemvalue="JUnit.testClassPlayerController" />
+        <item itemvalue="JUnit.testClassTeamController" />
+        <item itemvalue="JUnit.testClassTeamController.testForwardResponseParams" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +227,7 @@
       <workItem from="1577367100292" duration="69168000" />
       <workItem from="1578146546372" duration="1487000" />
       <workItem from="1578287038662" duration="27304000" />
-      <workItem from="1578734772309" duration="30286000" />
+      <workItem from="1578734772309" duration="31374000" />
     </task>
     <servers />
   </component>
@@ -251,11 +254,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/gameControllerTest/testAddEventAction.java</url>
           <line>88</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/electricalweb/controllers/UserController.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

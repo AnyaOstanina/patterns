@@ -1,5 +1,3 @@
-import com.electricalweb.controllers.UserController;
-import com.electricalweb.entities.User;
 import com.electricalweb.services.UserService;
 import org.junit.Before;
 import org.junit.Test;
@@ -43,7 +41,7 @@ public class testClassUserService {
     public void testGetCustomerByPasswordFindUser() throws Exception {
         when(request.getParameter("login")).thenReturn("admin");
         when(request.getParameter("password")).thenReturn("admin");
-        spyUserService.getCustomerByPassword(request, response);
+        spyUserService.getUserByPassword(request, response);
         verify(response, times(0)).sendRedirect("http://localhost:8080/Customer_Application_war/");
     }
 
@@ -51,7 +49,7 @@ public class testClassUserService {
     public void testGetCustomerByPasswordNotFindUser() throws Exception {
         when(request.getParameter("login")).thenReturn("admin1");
         when(request.getParameter("password")).thenReturn("admin");
-        spyUserService.getCustomerByPassword(request, response);
+        spyUserService.getUserByPassword(request, response);
         verify(response, times(1)).sendRedirect("http://localhost:8080/Customer_Application_war/");
     }
 }
