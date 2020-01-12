@@ -38,7 +38,7 @@ public class testClassUserService {
     }
 
     @Test
-    public void testGetCustomerByPasswordFindUser() throws Exception {
+    public void testGetUserByPasswordFindUser() throws Exception {
         when(request.getParameter("login")).thenReturn("admin");
         when(request.getParameter("password")).thenReturn("admin");
         spyUserService.getUserByPassword(request, response);
@@ -46,7 +46,7 @@ public class testClassUserService {
     }
 
     @Test
-    public void testGetCustomerByPasswordNotFindUser() throws Exception {
+    public void testGetUserByPasswordNotFindUser() throws Exception {
         when(request.getParameter("login")).thenReturn("admin1");
         when(request.getParameter("password")).thenReturn("admin");
         spyUserService.getUserByPassword(request, response);
