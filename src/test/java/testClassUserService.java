@@ -46,7 +46,7 @@ public class testClassUserService {
         spyUserService.getCustomerByPassword(request, response);
         verify(response, times(0)).sendRedirect("http://localhost:8080/Customer_Application_war/");
     }
-    
+
     @Test
     public void testGetCustomerByPasswordNotFindUser() throws Exception {
         when(request.getParameter("login")).thenReturn("admin1");
