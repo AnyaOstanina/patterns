@@ -1,12 +1,12 @@
 package com.electricalweb.entities;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Customer {
+public class User {
     private long id;
     private String login;
     private String password;
     private static final AtomicLong counter = new AtomicLong(100);
-    public Customer(String Login, String Password) {
+    public User(String Login, String Password) {
         this.id= counter.incrementAndGet();
         this.login = Login;
         this.password = Password;

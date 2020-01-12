@@ -16,9 +16,9 @@ public class UserController extends HttpServlet {
     UserService userService = new UserService();
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Customer customer = userService.getCustomerByPassword(request, response);
-        if(customer != null) {
-            setAttributes(request, customer);
+        User user = userService.getCustomerByPassword(request, response);
+        if(user != null) {
+            setAttributes(request, user);
             String url = userService.determineUrl();
             userService.forwardResponse(url, request, response);
         } else {
@@ -30,11 +30,11 @@ public class UserController extends HttpServlet {
         this.userService = userService;
     }
 
-    public void setAttributes(HttpServletRequest request, Customer customer) {
+    public void setAttributes(HttpServletRequest request, User user) {
         List<IEntity> gameList = gameService.gameList.getInstance();
         List<IEntity> protocols = gameService.getAllProtocols();
         request.setAttribute("protocols", protocols);
-        request.setAttribute("idCustomer", customer.getId());
+        request.setAttribute("idCustomer", user.getId());
         request.setAttribute("gameList", gameList);
     }
 

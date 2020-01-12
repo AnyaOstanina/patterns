@@ -3,23 +3,26 @@ import com.electricalweb.entities.User;
 import com.electricalweb.services.UserService;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.*;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import static org.mockito.Mockito.*;
 
-public class testClassUserController {
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.times;
+
+public class testClassUserService {
     @Mock
     HttpServletRequest request;
 
     @Mock
     HttpServletResponse response;
 
-    private UserController userController;
-    private UserController spyUserController;
     private UserService userService;
     private UserService spyUserService;
-    private long teamId;
 
     @Before
     public void setUp() throws Exception {
@@ -28,23 +31,27 @@ public class testClassUserController {
         when(request.getParameter("password")).thenReturn("admin");
         initSpy();
         doNothing().when(spyUserService).forwardResponse("/WEB-INF/views/customerinfo.jsp", request, response);
-        doNothing().when(spyUserController).setAttributes(any(HttpServletRequest.class),any(User.class));
         doNothing().when(response).sendRedirect("http://localhost:8080/Customer_Application_war/");
     }
 
     private void initSpy() {
-        userController = new UserController();
-        spyUserController =  Mockito.spy(userController);
         userService = new UserService();
         spyUserService =  Mockito.spy(userService);
-        userController.setUserService(spyUserService);
     }
 
     @Test
-    public void testDoGetSetForwardResponseNotCalled() throws Exception {
+    public void testGetCustomerByPasswordFindUser() throws Exception {
+        when(request.getParameter("login")).thenReturn("admin");
+        when(request.getParameter("password")).thenReturn("admin");
+        spyUserService.getCustomerByPassword(request, response);
+        verify(response, times(0)).sendRedirect("http://localhost:8080/Customer_Application_war/");
+    }
+    
+    @Test
+    public void testGetCustomerByPasswordNotFindUser() throws Exception {
         when(request.getParameter("login")).thenReturn("admin1");
         when(request.getParameter("password")).thenReturn("admin");
-        spyUserController.doPost(request, response);
-        verify(response, times(2)).sendRedirect("http://localhost:8080/Customer_Application_war/");
+        spyUserService.getCustomerByPassword(request, response);
+        verify(response, times(1)).sendRedirect("http://localhost:8080/Customer_Application_war/");
     }
 }

@@ -1,6 +1,5 @@
 package com.electricalweb.services;
 import com.electricalweb.entities.*;
-import com.electricalweb.services.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,31 +12,31 @@ public class UserService extends Service {
         super("/WEB-INF/views/customerinfo.jsp");
     }
 
-    List<Customer> customerList = CustomerList.getInstance();
+    List<User> userList = UserList.getInstance();
     GameList gameList = new GameList();
 
     public List getAllCustomers() {
-        return  customerList;
+        return userList;
     }
 
-    public List addCustomer(Customer customer) {
-        customerList.add(customer);
-        return customerList;
+    public List addCustomer(User user) {
+        userList.add(user);
+        return userList;
     }
 
-    public Customer getCustomerByPassword(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Customer customer = null;
+    public User getCustomerByPassword(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        User user = null;
         String login = request.getParameter("login");
         String password = request.getParameter("password");
-        Optional<Customer> match
-                = customerList.stream()
+        Optional<User> match
+                = userList.stream()
                 .filter(e -> e.getLogin().equalsIgnoreCase(login) && e.getLogin().equalsIgnoreCase(password))
                 .findFirst();
         if (match.isPresent()) {
-            customer = match.get();
+            user = match.get();
         } else {
             response.sendRedirect("http://localhost:8080/Customer_Application_war/");
         }
-        return customer;
+        return user;
     }
 }
