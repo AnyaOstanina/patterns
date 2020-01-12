@@ -3,9 +3,8 @@ import com.electricalweb.entities.*;
 import com.electricalweb.interfaces.IEntity;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class ProtocolService extends Service {
     public ProtocolService() {
@@ -54,8 +53,9 @@ public class ProtocolService extends Service {
         return pair;
     }
 
-    private Map.Entry<Player, Integer> getResultOfGoalStatistic(Map<Player, Integer> map) {
-        return map.entrySet().stream().max((entry1, entry2) -> entry1.getValue() > entry2.getValue() ? 1 : -1).get();
+    public <K, V extends Comparable<V>> Map.Entry<Player, Integer> getResultOfGoalStatistic(Map<K, V> map) {
+        Map.Entry<K, V> maxEntry = Collections.max(map.entrySet(), Comparator.comparing(Map.Entry::getValue));
+        return (Map.Entry<Player, Integer>) maxEntry;
     }
 
     private boolean isGoal(List<Event> events, int i) {
