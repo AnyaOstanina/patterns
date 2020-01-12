@@ -1,5 +1,4 @@
 package com.electricalweb.entities;
-
 import java.util.concurrent.atomic.AtomicLong;
 
 public class Customer {

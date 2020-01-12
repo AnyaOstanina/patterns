@@ -2,7 +2,6 @@ package com.electricalweb.controllers;
 import com.electricalweb.entities.Player;
 import com.electricalweb.entities.Team;
 import com.electricalweb.services.PlayerService;
-
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

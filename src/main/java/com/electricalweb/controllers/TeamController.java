@@ -2,7 +2,6 @@ package com.electricalweb.controllers;
 import com.electricalweb.interfaces.IEntity;
 import com.electricalweb.entities.Team;
 import com.electricalweb.services.TeamService;
-
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
