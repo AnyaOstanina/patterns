@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 import org.mockito.*;
+
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class testClassTeamController {
@@ -26,6 +28,13 @@ public class testClassTeamController {
 
     private Team team;
     private List<Team> teamList;
+
+    @Captor
+    ArgumentCaptor<HttpServletResponse> responseCaptor;
+    @Captor
+    ArgumentCaptor<HttpServletRequest> requestCaptor;
+    @Captor
+    ArgumentCaptor<String> stringCaptor;
 
     @Before
     public void setUp() {
@@ -57,6 +66,15 @@ public class testClassTeamController {
         spyTeamController.setTeamService(spyTeamService);
         spyTeamController.doPost(request, response);
         verify(spyTeamService, times(1)).addTeam(request);
+    }
+
+    @Test
+    public void testForwardResponseParams() throws Exception {
+        spyTeamController.doPost(request, response);
+        verify(spyTeamService).forwardResponse(stringCaptor.capture(),requestCaptor.capture(),responseCaptor.capture());
+        assertEquals(request, requestCaptor.getValue());
+        assertEquals(response, responseCaptor.getValue());
+        assertEquals("/WEB-INF/views/team.jsp", stringCaptor.getValue());
     }
 
     @Test

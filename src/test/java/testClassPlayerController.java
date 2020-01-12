@@ -27,7 +27,11 @@ public class testClassPlayerController {
     @Captor
     ArgumentCaptor<Long> longCapture;
     @Captor
+    ArgumentCaptor<HttpServletResponse> responseCaptor;
+    @Captor
     ArgumentCaptor<HttpServletRequest> requestCaptor;
+    @Captor
+    ArgumentCaptor<String> stringCaptor;
 
     private PlayerController playerController;
     private PlayerController spyPlayerController;
@@ -62,6 +66,15 @@ public class testClassPlayerController {
         verify(spyPlayerController).setAttributes(requestCaptor.capture(),longCapture.capture(), playersCaptor.capture());
         ArrayList<Object> players = new ArrayList<>();
         assertEquals(players, playersCaptor.getValue());
+    }
+
+    @Test
+    public void testForwardResponseParams() throws Exception {
+        spyPlayerController.doGet(request, response);
+        verify(spyPlayerService).forwardResponse(stringCaptor.capture(),requestCaptor.capture(),responseCaptor.capture());
+        assertEquals(request, requestCaptor.getValue());
+        assertEquals(response, responseCaptor.getValue());
+        assertEquals("/WEB-INF/views/player.jsp", stringCaptor.getValue());
     }
 
     @Test
